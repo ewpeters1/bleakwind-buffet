@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Elliot Peters
+ * SmokehouseSkeleton.cs
+ * Purpose: To build a class for the SS order
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

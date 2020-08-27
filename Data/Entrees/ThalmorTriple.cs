@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Elliot Peters
+ * ThalmorTriple.cs
+ * Purpose: To build a class for the TT order
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,4 +1,10 @@
-﻿using System;
+﻿
+/*
+ * Author: Elliot Peters
+ * SodaFlavor.cs
+ * Purpose: To build a class for the enums for soda flavor
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

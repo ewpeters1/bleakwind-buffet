@@ -1,4 +1,9 @@
-﻿using BleakwindBuffet.Data.Enums;
+﻿/*
+ * Author: Elliot Peters
+ * SailorSoda.cs
+ * Purpose: To build a class for the sailor soda order
+ */
+using BleakwindBuffet.Data.Enums;
 using Data.Enums;
 using System;
 using System.Collections.Generic;

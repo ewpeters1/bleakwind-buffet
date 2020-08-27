@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Elliot Peters
+ * DoubleDraugr.cs
+ * Purpose: To build a class for the DD order
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Elliot Peters
+ * PhillyPoacher.cs
+ * Purpose: To build a class for the PP order
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

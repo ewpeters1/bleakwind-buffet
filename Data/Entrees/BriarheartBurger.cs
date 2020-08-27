@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Elliot Peters
+ * BrairheartBurger.cs
+ * Purpose: To build a class for the BB order
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

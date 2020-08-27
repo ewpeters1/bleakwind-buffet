@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Elliot Peters
+ * GardenOrcOmlette.cs
+ * Purpose: To build a class for the Omlette order
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
