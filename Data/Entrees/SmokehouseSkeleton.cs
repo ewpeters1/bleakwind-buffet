@@ -12,7 +12,7 @@ namespace Data.Entrees
         public double Price => 5.62;
 
         /// <summary>
-        /// Gets the value of calories for DD burger
+        /// Gets the value of calories for SS
         /// </summary>
         public uint Calories => 602;
 
@@ -69,7 +69,7 @@ namespace Data.Entrees
         }
 
         /// <summary>
-        /// Sets up and returns the special instructions list for the DD burger
+        /// Sets up and returns the special instructions list for the SS
         /// </summary>
         public List<string> SpecialInstructions
         {
@@ -85,7 +85,7 @@ namespace Data.Entrees
         }
 
         /// <summary>
-        /// Method to override the to string for the DD burger
+        /// Method to override the to string for the SS
         /// </summary>
         /// <returns>the correct return that we want</returns>
         public override string ToString()

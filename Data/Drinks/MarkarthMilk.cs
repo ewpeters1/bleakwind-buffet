@@ -1,16 +1,12 @@
 ﻿using BleakwindBuffet.Data.Enums;
-using Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Data.Drinks
 {
-    public class SailorsSoda
+    public class MarkarthMilk
     {
-        /// <summary>
-        /// calue initializing the size to small 
-        /// </summary>
         private Size size = Size.Small;
 
         /// <summary>
@@ -35,9 +31,9 @@ namespace Data.Drinks
         {
             get
             {
-                if (Size == Size.Large) return 2.07;
-                if (Size == Size.Medium) return 1.74;
-                if (Size == Size.Small) return 1.42;
+                if (Size == Size.Large) return 1.22;
+                if (Size == Size.Medium) return 1.11;
+                if (Size == Size.Small) return 1.05;
                 throw new NotImplementedException();
             }
         }
@@ -49,26 +45,10 @@ namespace Data.Drinks
         {
             get
             {
-                if (Size == Size.Large) return 205;
-                if (Size == Size.Medium) return 153;
-                if (Size == Size.Small) return 117;
+                if (Size == Size.Large) return 93;
+                if (Size == Size.Medium) return 72;
+                if (Size == Size.Small) return 56;
                 throw new NotImplementedException();
-            }
-        }
-
-        /// <summary>
-        /// This is the property for the flavor, has get and set methods 
-        /// </summary>
-        private SodaFlavor flavor = SodaFlavor.Cherry;
-        public SodaFlavor Flavor
-        {
-            get
-            {
-                return flavor;
-            }
-            set
-            {
-                flavor = value;
             }
         }
 
@@ -76,7 +56,7 @@ namespace Data.Drinks
         /// <summary>
         /// variable for looking at bool for ice
         /// </summary>
-        private bool ice = true;
+        private bool ice = false;
         /// <summary>
         /// get and set for Ice
         /// </summary>
@@ -87,14 +67,14 @@ namespace Data.Drinks
         }
 
         /// <summary>
-        /// Sets up and returns the special instructions list for the Soda
+        /// Sets up and returns the special instructions list for the Milk
         /// </summary>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Ice) instructions.Add("Hold ice");
+                if (Ice) instructions.Add("Add ice");
                 return instructions;
             }
         }
@@ -105,9 +85,7 @@ namespace Data.Drinks
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{Size} {Flavor} Sailor Soda";
+            return $"{Size} Markarth Milk"; 
         }
-
-
     }
 }

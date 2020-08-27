@@ -14,7 +14,7 @@ namespace Data.Entrees
         /// <summary>
         /// Gets the value of calories for burger
         /// </summary>
-        public uint Calories => 732;
+        public uint Calories => 743;
 
         /// <summary>
         /// variable for lloking at bool for Ketchup

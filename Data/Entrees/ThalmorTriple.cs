@@ -7,7 +7,7 @@ namespace Data.Entrees
     public class ThalmorTriple
     {
         /// <summary>
-        /// Gets the price of the DD burger
+        /// Gets the price of the TT
         /// </summary>
         public double Price => 8.32;
 
@@ -43,7 +43,7 @@ namespace Data.Entrees
         }
 
         /// <summary>
-        /// Sets up and returns the special instructions list for the DD burger
+        /// Sets up and returns the special instructions list for the TT
         /// </summary>
         public List<string> SpecialInstructions
         {
@@ -57,7 +57,7 @@ namespace Data.Entrees
         }
 
         /// <summary>
-        /// Method to override the to string for the DD burger
+        /// Method to override the to string for theTT
         /// </summary>
         /// <returns>the correct return that we want</returns>
         public override string ToString()
