@@ -4,14 +4,13 @@
  * Purpose: To build a class for the sailor soda order
  */
 using BleakwindBuffet.Data.Enums;
-using Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorsSoda
+    public class SailorSoda
     {
         /// <summary>
         /// calue initializing the size to small 
