@@ -15,6 +15,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class SailorSodaTests
     {
+        /// <summary>
+        /// These are the tests for Sailor Soda
+        /// </summary>
         [Fact]
         public void ShouldIncludeIceByDefault()
         {

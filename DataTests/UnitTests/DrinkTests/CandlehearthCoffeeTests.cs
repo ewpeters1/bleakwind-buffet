@@ -14,6 +14,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class CandlehearthCoffeeTests
     {
+        /// <summary>
+        /// These are the tests for Candlehearth Coffee
+        /// </summary>
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {

@@ -13,6 +13,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class MadOtarGritsTests
     {
+        /// <summary>
+        /// These are the tests for The Mad Otar Grits
+        /// </summary>
         [Fact]
         public void ShouldBeSmallByDefault()
         {

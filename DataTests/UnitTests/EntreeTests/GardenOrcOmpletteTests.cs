@@ -10,6 +10,9 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
+    /// <summary>
+    /// These are the tests for The garden Orc Omlette
+    /// </summary>
     public class GardenOrcOmeletteTests
     {
         [Fact]
@@ -106,9 +109,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             gO.Tomato = includeTomato;
             gO.Cheddar = includeCheddar;
             if (!includeBroccoli) Assert.Contains("Hold broccoli", gO.SpecialInstructions);
-            else if (!includeCheddar) Assert.Contains("Hold cheddar", gO.SpecialInstructions);
-            else if (!includeMushrooms) Assert.Contains("Hold mushrooms", gO.SpecialInstructions);
-            else if (!includeTomato) Assert.Contains("Hold tomato", gO.SpecialInstructions);
+            if (!includeCheddar) Assert.Contains("Hold cheddar", gO.SpecialInstructions);
+            if (!includeMushrooms) Assert.Contains("Hold mushrooms", gO.SpecialInstructions);
+            if (!includeTomato) Assert.Contains("Hold tomato", gO.SpecialInstructions);
             else Assert.Empty(gO.SpecialInstructions);
         }
 

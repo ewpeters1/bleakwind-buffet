@@ -13,6 +13,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class MarkarthMilkTests
     {
+        /// <summary>
+        /// These are the tests for Markarth Milk
+        /// </summary>
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {

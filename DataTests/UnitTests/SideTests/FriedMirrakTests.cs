@@ -13,6 +13,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class FriedMiraakTests
     {
+        /// <summary>
+        /// These are the tests for The Fried Miraak
+        /// </summary>
         [Fact]
         public void ShouldBeSmallByDefault()
         {

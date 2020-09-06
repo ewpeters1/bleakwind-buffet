@@ -11,6 +11,9 @@ using BleakwindBuffet.Data.Sides;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
+    /// <summary>
+    /// These are the tests for The vokun salad
+    /// </summary>
     public class VokunSaladTests
     {
         [Fact]

@@ -10,6 +10,9 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
+    /// <summary>
+    /// These are the tests for The Philly Poacher
+    /// </summary>
     public class PhillyPoacherTests
     {
         [Fact]
@@ -88,8 +91,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             pp.Onion = includeOnion;
             pp.Roll = includeRoll;
             if (!includeSirloin) Assert.Contains("Hold sirloin", pp.SpecialInstructions);
-            else if (!includeOnion) Assert.Contains("Hold onion", pp.SpecialInstructions);
-            else if (!includeRoll) Assert.Contains("Hold roll", pp.SpecialInstructions);
+            if (!includeOnion) Assert.Contains("Hold onions", pp.SpecialInstructions);
+            if (!includeRoll) Assert.Contains("Hold roll", pp.SpecialInstructions);
             else Assert.Empty(pp.SpecialInstructions);
         }
 

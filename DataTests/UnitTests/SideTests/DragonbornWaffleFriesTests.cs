@@ -13,6 +13,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class DragonbornWaffleFriesTests
     {
+        /// <summary>
+        /// These are the tests for The Dragonborn Waffle Fries
+        /// </summary>
         [Fact]
         public void ShouldBeSmallByDefault()
         {

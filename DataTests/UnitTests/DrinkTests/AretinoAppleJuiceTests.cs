@@ -13,6 +13,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class AretinoAppleJuiceTests
     {
+        /// <summary>
+        /// These are the tests for Aretino Apple Juice
+        /// </summary>
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {

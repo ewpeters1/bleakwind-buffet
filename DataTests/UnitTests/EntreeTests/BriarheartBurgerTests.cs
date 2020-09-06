@@ -10,6 +10,9 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
+    /// <summary>
+    /// These are the tests for The Briarheart Burger
+    /// </summary>
     public class BriarheartBurgerTests
     {
         
@@ -126,10 +129,10 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             bb.Pickle = includePickle;
             bb.Cheese = includeCheese;
             if (!includeBun) Assert.Contains("Hold bun", bb.SpecialInstructions);
-            else if (!includeKetchup) Assert.Contains("Hold ketchup", bb.SpecialInstructions);
-            else if (!includeMustard) Assert.Contains("Hold mustard", bb.SpecialInstructions);
-            else if (!includePickle) Assert.Contains("Hold pickle", bb.SpecialInstructions);
-            else if (!includeCheese) Assert.Contains("Hold cheese", bb.SpecialInstructions);
+            if (!includeKetchup) Assert.Contains("Hold ketchup", bb.SpecialInstructions);
+            if (!includeMustard) Assert.Contains("Hold mustard", bb.SpecialInstructions);
+            if (!includePickle) Assert.Contains("Hold pickle", bb.SpecialInstructions);
+            if (!includeCheese) Assert.Contains("Hold cheese", bb.SpecialInstructions);
             else Assert.Empty(bb.SpecialInstructions);
         }
 
