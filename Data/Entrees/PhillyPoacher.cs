@@ -9,17 +9,17 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class PhillyPoacher
+    public class PhillyPoacher : Entree
     {
         /// <summary>
         /// Gets the price of the Poacher
         /// </summary>
-        public double Price => 7.23;
+        public override double Price => 7.23;
 
         /// <summary>
         /// Gets the value of calories for Poacher
         /// </summary>
-        public uint Calories => 784;
+        public override uint Calories => 784;
 
         /// <summary>
         /// variable for looking at bool for sirloin
@@ -63,7 +63,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Sets up and returns the special instructions list for the Philly Poacher
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

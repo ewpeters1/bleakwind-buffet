@@ -10,24 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink 
     {
         private Size size = Size.Small;
-
-        /// <summary>
-        /// This is the size property, and has get and set
-        /// </summary>
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
 
         /// <summary>
         /// The property for Price, and returns a value based on the size
@@ -35,7 +20,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="NotImplementedException">
         /// Throws when an invalid size is entered
         /// </exception>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -52,7 +37,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="NotImplementedException">
         /// Throws when an invalid size is entered
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -80,7 +65,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Sets up and returns the special instructions list for the Milk
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

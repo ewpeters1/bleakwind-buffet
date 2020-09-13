@@ -9,17 +9,17 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree
     {
         /// <summary>
         /// Gets the price of the DD burger
         /// </summary>
-        public double Price => 5.62;
+        public override double Price => 5.62;
 
         /// <summary>
         /// Gets the value of calories for SS
         /// </summary>
-        public uint Calories => 602;
+        public override uint Calories => 602;
 
         /// <summary>
         /// variable for looking at bool for a sausage link
@@ -76,7 +76,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Sets up and returns the special instructions list for the SS
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

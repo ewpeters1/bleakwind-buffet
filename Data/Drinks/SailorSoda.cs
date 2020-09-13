@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorSoda
+    public class SailorSoda : Drink
     {
         /// <summary>
         /// calue initializing the size to small 
@@ -18,27 +18,12 @@ namespace BleakwindBuffet.Data.Drinks
         private Size size = Size.Small;
 
         /// <summary>
-        /// This is the size property, and has get and set
-        /// </summary>
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
-
-        /// <summary>
         /// The property for Price, and returns a value based on the size
         /// </summary>
         /// <exception cref="NotImplementedException">
         /// Throws when an invalid size is entered
         /// </exception>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -55,7 +40,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="NotImplementedException">
         /// Throws when an invalid size is entered
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -99,7 +84,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Sets up and returns the special instructions list for the Soda
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
