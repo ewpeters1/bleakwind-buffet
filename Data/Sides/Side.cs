@@ -1,19 +1,16 @@
 ﻿/*
- * Author: ELliot Peters
- * Title: Drink.cs
- * Purpose: Used as base file for drinks
+ * Author: Elliot Peters
+ * Title: Side.cs
+ * Purpose: Used as base file for entrees
  */
-using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffet.Data.Drinks
+namespace BleakwindBuffet.Data.Sides
 {
-    /// <summary>
-    /// A base class representing common properties of drinks 
-    /// </summary>
-    public abstract class Drink : IOrderItem
+    public abstract class Side : IOrderItem
     {
         /// <summary>
         /// Size of drink

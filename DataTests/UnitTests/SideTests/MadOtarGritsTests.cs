@@ -13,6 +13,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class MadOtarGritsTests
     {
+        [Fact]
+        public void ShouldBeASide()
+        {
+            MadOtarGrits mg = new MadOtarGrits();
+            Assert.IsAssignableFrom<Side>(mg);
+        }
         /// <summary>
         /// These are the tests for The Mad Otar Grits
         /// </summary>

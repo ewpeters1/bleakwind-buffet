@@ -9,22 +9,22 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThugsTbone
+    public class ThugsTbone : Entree
     {
         /// <summary>
         /// Price for Thugs Tbone
         /// </summary>
-        public double Price = 6.44;
+        public override double Price => 6.44;
 
         /// <summary>
         /// uint for calorie values
         /// </summary>
-        public uint Calories = 982;
+        public override uint Calories => 982;
 
         /// <summary>
         /// Returns an empty list for the special instructions for the T-bone
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

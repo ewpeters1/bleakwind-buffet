@@ -9,24 +9,9 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class FriedMiraak
+    public class FriedMiraak : Side
     {
         private Size size = Size.Small;
-
-        /// <summary>
-        /// This is the size property, and has get and set
-        /// </summary>
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
 
         /// <summary>
         /// The property for Price, and returns a value based on the size
@@ -34,7 +19,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <exception cref="NotImplementedException">
         /// Throws when an invalid size is entered
         /// </exception>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -51,7 +36,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <exception cref="NotImplementedException">
         /// Throws when an invalid size is entered
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -65,7 +50,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// returns an empty list since there are no special instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

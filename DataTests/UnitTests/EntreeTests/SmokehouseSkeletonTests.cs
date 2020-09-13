@@ -14,7 +14,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     /// These are the tests for The Smokehouse Skeleton
     /// </summary>
     public class SmokehouseSkeletonTests
-    {        
+    {
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<Entree>(ss);
+        }
         [Fact]
         public void ShouldInlcudeSausageByDefault()
         {
