@@ -7,11 +7,6 @@
         mc:Ignorable="d"
         Title="Bleakwind Buffet Point Of Sale" Height="450" Width="800">
     <Grid>
-        <local:MenuSelection/>
-        <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="C:\Users\ellio\Desktop\Bleakwind Buffet\74705-The_Elder_Scrolls_V_Skyrim-mountain-tundra-video_games.jpg" AlignmentY="Top" AlignmentX="Center"/>
-        </Grid.Background>
-
-
+        <local:MenuOverheadControl></local:MenuOverheadControl>
     </Grid>
 </Window>
