@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Elliot Peters
+ * DoubleDraugrSelection.xaml.cs
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,14 +22,26 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class DoubleDraugrSelection : UserControl
     {
+        /// <summary>
+        /// Creates new Menu Overhad object
+        /// </summary>
         private MenuOverheadControl menuLook = new MenuOverheadControl();
 
+        /// <summary>
+        /// assigns menuVal to the new object 
+        /// </summary>
+        /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
         public DoubleDraugrSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
             menuLook = menuVal;
         }
 
+        /// <summary>
+        /// Creates back click event which reurn the border to its original display of the menu selection
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Button Event</param>
         void BackClick(object sender, RoutedEventArgs e)
         {
             menuLook.menuBorder.Child = menuLook.menuSelect;

@@ -78,9 +78,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row ="5" Grid.Column="2" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png">
-
-        </Image>
+        <Image Grid.Row ="3" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png" Grid.ColumnSpan="2" Margin="165,64,101,0" Grid.RowSpan="2"/>
         <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Bun" Margin="10,30,0,25" Grid.RowSpan="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
@@ -131,8 +129,8 @@
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <Label Content="Customize Thalmor Triple" FontWeight= "Bold" FontFamily="Tahoma" FontSize="20" Grid.ColumnSpan="2" Margin="0,32,63,18" Grid.RowSpan="2" Grid.Column="1"/>
-        <Button Name="DoneClick" FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="6" Background="Gray" Margin="160,10,160,10" Grid.RowSpan="1" Grid.ColumnSpan="2"/>
-        <Button Click="BackClick" FontFamily="Tahoma" FontSize="20" Content="Back" Grid.Column="1" Foreground="White" Grid.Row="6" Background="Gray" Margin="160,10,160,10" Grid.ColumnSpan="2"/>
+        <Label Content="Customize Thalmor Triple" FontWeight= "Bold" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" Margin="0,32,63,18" Grid.RowSpan="2"/>
+
+        <Button Click="BackClick" FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="2" Background="Gray" Margin="0,46,0,0" RenderTransformOrigin="-0.719,-3.419" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="80" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="200">
-    <Grid Background="Gray">
-            
-    </Grid>
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" FontWeight= "Bold" TextAlignment="Center" FontSize="20">
+            Order Number (#)
+        </TextBlock>
+        <TextBox DockPanel.Dock="Top" FontWeight= "Bold" TextAlignment="Center" FontSize="20"/>
+        <TextBox Name ="itemTextBox" DockPanel.Dock="Bottom"/>
+    </DockPanel>
+
 </UserControl>

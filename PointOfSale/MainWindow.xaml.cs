@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Elliot Peters
+ * MainWindow.xaml.cs
+ * Displays main window
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

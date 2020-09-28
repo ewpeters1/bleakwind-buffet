@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Elliot Peters
+ * CurrentTicketControl.cs
+ * Will control the prices, tax, etc
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -14,7 +19,7 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CurrentTicketControl.xaml
+    /// Interaction logic for CurrentTicketControl.xaml, wil control prices and order number, etc.
     /// </summary>
     public partial class CurrentTicketControl : UserControl
     {

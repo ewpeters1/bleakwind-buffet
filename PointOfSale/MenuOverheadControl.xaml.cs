@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Elliot Peters
+ * MenuOverheadControl.xaml.cs
+ * This controls the two selection menus for the point of sale for the project
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -26,6 +31,9 @@ namespace PointOfSale
     {
         public MenuSelection menuSelect = new MenuSelection();
 
+        /// <summary>
+        /// Initializes the GUI and sets the correct borders
+        /// </summary>
         public MenuOverheadControl()
         {
             InitializeComponent();
@@ -33,7 +41,11 @@ namespace PointOfSale
             menuBorder.Child = menuSelect;
         }
 
-
+        /// <summary>
+        /// This reads off of a button press, and makes sure that the button pressed opens up the corresponding custimization menu, which is the Selection menu. It sets this as the child and opens up that. 
+        /// </summary>
+        /// <param name="sender">button press</param>
+        /// <param name="e">Reads the correct value from IOrderItem</param>
         void NewItem_Click(object sender, SelEventHandler e)
         {
             if (e.item.GetType().IsSubclassOf(typeof(BleakwindBuffet.Data.Entrees.Entree)))
