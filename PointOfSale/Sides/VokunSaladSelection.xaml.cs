@@ -18,9 +18,17 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class VokunSaladSelection : UserControl
     {
-        public VokunSaladSelection()
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public VokunSaladSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
+        }
+
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
         }
     }
 }

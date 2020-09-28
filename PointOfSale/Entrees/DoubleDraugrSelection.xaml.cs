@@ -18,9 +18,17 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class DoubleDraugrSelection : UserControl
     {
-        public DoubleDraugrSelection()
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public DoubleDraugrSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
+        }
+
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
         }
     }
 }

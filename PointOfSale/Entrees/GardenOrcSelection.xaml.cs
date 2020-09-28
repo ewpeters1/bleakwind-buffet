@@ -18,9 +18,17 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class GardenOrcSelection : UserControl
     {
-        public GardenOrcSelection()
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public GardenOrcSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
+        }
+
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
         }
     }
 }

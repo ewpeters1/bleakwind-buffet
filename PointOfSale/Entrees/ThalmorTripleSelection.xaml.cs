@@ -18,9 +18,18 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class ThalmorTripleSelection : UserControl
     {
-        public ThalmorTripleSelection()
+
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public ThalmorTripleSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
         }
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
+        }
+
     }
 }

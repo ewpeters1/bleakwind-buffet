@@ -18,9 +18,17 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class MadOtarGritsSelection : UserControl
     {
-        public MadOtarGritsSelection()
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public MadOtarGritsSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
+        }
+
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
         }
     }
 }

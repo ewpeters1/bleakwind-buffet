@@ -18,9 +18,17 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class SailorSodaSelection : UserControl
     {
-        public SailorSodaSelection()
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public SailorSodaSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
+        }
+
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
         }
     }
 }

@@ -18,9 +18,17 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class BrairheartBurgerSelection : UserControl
     {
-        public BrairheartBurgerSelection()
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public BrairheartBurgerSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
+        }
+
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
         }
     }
 }

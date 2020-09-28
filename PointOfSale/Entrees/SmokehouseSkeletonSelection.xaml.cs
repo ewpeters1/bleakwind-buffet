@@ -18,9 +18,17 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class SmokehouseSkeletonSelection : UserControl
     {
-        public SmokehouseSkeletonSelection()
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public SmokehouseSkeletonSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
+        }
+
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
         }
     }
 }

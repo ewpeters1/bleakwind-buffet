@@ -18,9 +18,17 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class WarriorWaterSelection : UserControl
     {
-        public WarriorWaterSelection()
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public WarriorWaterSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
+        }
+
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
         }
     }
 }

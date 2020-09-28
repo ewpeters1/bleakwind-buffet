@@ -18,9 +18,17 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class MarkarthMilkSelection : UserControl
     {
-        public MarkarthMilkSelection()
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public MarkarthMilkSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
+        }
+
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
         }
     }
 }

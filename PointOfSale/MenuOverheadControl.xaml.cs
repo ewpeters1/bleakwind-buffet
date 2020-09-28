@@ -38,29 +38,29 @@ namespace PointOfSale
         {
             if (e.item.GetType().IsSubclassOf(typeof(BleakwindBuffet.Data.Entrees.Entree)))
             {
-                if (e.item is BriarheartBurger) menuBorder.Child = new BrairheartBurgerSelection();
-                if (e.item is DoubleDraugr) menuBorder.Child = new DoubleDraugrSelection();
-                if (e.item is GardenOrcOmlette) menuBorder.Child = new GardenOrcSelection();
-                if (e.item is PhillyPoacher) menuBorder.Child = new PhillyPoacherSelection();
-                if (e.item is SmokehouseSkeleton) menuBorder.Child = new SmokehouseSkeletonSelection();
-                if (e.item is ThalmorTriple) menuBorder.Child = new ThalmorTripleSelection();
+                if (e.item is BriarheartBurger) menuBorder.Child = new BrairheartBurgerSelection(this);
+                if (e.item is DoubleDraugr) menuBorder.Child = new DoubleDraugrSelection(this);
+                if (e.item is GardenOrcOmlette) menuBorder.Child = new GardenOrcSelection(this);
+                if (e.item is PhillyPoacher) menuBorder.Child = new PhillyPoacherSelection(this);
+                if (e.item is SmokehouseSkeleton) menuBorder.Child = new SmokehouseSkeletonSelection(this);
+                if (e.item is ThalmorTriple) menuBorder.Child = new ThalmorTripleSelection(this);
             }
 
             if (e.item.GetType().IsSubclassOf(typeof(BleakwindBuffet.Data.Drinks.Drink)))
             {
-                if (e.item is AretinoAppleJuice) menuBorder.Child = new AretinoAppleJuiceSelection();
-                if (e.item is CandlehearthCoffee) menuBorder.Child = new CandleHearthCoffeeSelection();
-                if (e.item is MarkarthMilk) menuBorder.Child = new MarkarthMilkSelection();
-                if (e.item is SailorSoda) menuBorder.Child = new SailorSodaSelection();
-                if (e.item is WarriorWater) menuBorder.Child = new WarriorWaterSelection();
+                if (e.item is AretinoAppleJuice) menuBorder.Child = new AretinoAppleJuiceSelection(this);
+                if (e.item is CandlehearthCoffee) menuBorder.Child = new CandleHearthCoffeeSelection(this);
+                if (e.item is MarkarthMilk) menuBorder.Child = new MarkarthMilkSelection(this);
+                if (e.item is SailorSoda) menuBorder.Child = new SailorSodaSelection(this);
+                if (e.item is WarriorWater) menuBorder.Child = new WarriorWaterSelection(this);
             }
 
             if (e.item.GetType().IsSubclassOf(typeof(BleakwindBuffet.Data.Sides.Side)))
             {
-                if (e.item is VokunSalad) menuBorder.Child = new VokunSaladSelection();
-                if (e.item is MadOtarGrits) menuBorder.Child = new MadOtarGritsSelection();
-                if (e.item is DragonbornWaffleFries) menuBorder.Child = new DragonbornWaffleFriesSelection();
-                if (e.item is FriedMiraak) menuBorder.Child = new FriedMiraakSelection();
+                if (e.item is VokunSalad) menuBorder.Child = new VokunSaladSelection(this);
+                if (e.item is MadOtarGrits) menuBorder.Child = new MadOtarGritsSelection(this);
+                if (e.item is DragonbornWaffleFries) menuBorder.Child = new DragonbornWaffleFriesSelection(this);
+                if (e.item is FriedMiraak) menuBorder.Child = new FriedMiraakSelection(this);
             }
         }
     }

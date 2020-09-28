@@ -28,91 +28,91 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        void BriarheartBurgerB_Click(object sender, RoutedEventArgs e)
+        void BriarheartBurgerB(object sender, RoutedEventArgs e)
         {
             BriarheartBurger resItem = new BriarheartBurger();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void DoubleDraugrB_Click(object sender, RoutedEventArgs e)
+        void DoubleDraugrB(object sender, RoutedEventArgs e)
         {
             DoubleDraugr resItem = new DoubleDraugr();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void ThalmorTripleB_Click(object sender, RoutedEventArgs e)
+        void ThalmorTripleB(object sender, RoutedEventArgs e)
         {
             ThalmorTriple resItem = new ThalmorTriple();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void SmokehouseB_Click(object sender, RoutedEventArgs e)
+        void SmokehouseB(object sender, RoutedEventArgs e)
         {
             SmokehouseSkeleton resItem = new SmokehouseSkeleton();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void GardenOrcB_Click(object sender, RoutedEventArgs e)
+        void GardenOrcB(object sender, RoutedEventArgs e)
         {
             GardenOrcOmlette resItem = new GardenOrcOmlette();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void ThugsTB_Click(object sender, RoutedEventArgs e)
+        void ThugsTB(object sender, RoutedEventArgs e)
         {
             ThugsTbone resItem = new ThugsTbone();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void SailorSodaB_Click(object sender, RoutedEventArgs e)
+        void SailorSodaB(object sender, RoutedEventArgs e)
         {
             SailorSoda resItem = new SailorSoda();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void MarkarthMilkB_Click(object sender, RoutedEventArgs e)
+        void MarkarthMilkB(object sender, RoutedEventArgs e)
         {
             MarkarthMilk resItem = new MarkarthMilk();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void AretinoB_Click(object sender, RoutedEventArgs e)
+        void AretinoB(object sender, RoutedEventArgs e)
         {
             AretinoAppleJuice resItem = new AretinoAppleJuice();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void CandlehearthB_Click(object sender, RoutedEventArgs e)
+        void CandlehearthB(object sender, RoutedEventArgs e)
         {
             CandlehearthCoffee resItem = new CandlehearthCoffee();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void WarriorWB_Click(object sender, RoutedEventArgs e)
+        void WarriorWB(object sender, RoutedEventArgs e)
         {
             WarriorWater resItem = new WarriorWater();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void VokunSaladB_Click(object sender, RoutedEventArgs e)
+        void VokunSaladB(object sender, RoutedEventArgs e)
         {
             VokunSalad resItem = new VokunSalad();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void FriedMB_Click(object sender, RoutedEventArgs e)
+        void FriedMB(object sender, RoutedEventArgs e)
         {
             FriedMiraak resItem = new FriedMiraak();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void MadOB_Click(object sender, RoutedEventArgs e)
+        void MadOB(object sender, RoutedEventArgs e)
         {
             MadOtarGrits resItem = new MadOtarGrits();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });
         }
 
-        void DragonbornB_Click(object sender, RoutedEventArgs e)
+        void DragonBornB(object sender, RoutedEventArgs e)
         {
             DragonbornWaffleFries resItem = new DragonbornWaffleFries();
             Selected?.Invoke(this, new SelEventHandler() { item = resItem });

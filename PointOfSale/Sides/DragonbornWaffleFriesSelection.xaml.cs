@@ -27,7 +27,7 @@ namespace PointOfSale.Sides
             menuLook = menuVal;
         }
 
-        void BackClick_Click(object sender, RoutedEventArgs e)
+        void BackClick(object sender, RoutedEventArgs e)
         {
             menuLook.menuBorder.Child = menuLook.menuSelect;
         }

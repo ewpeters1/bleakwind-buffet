@@ -1,5 +1,5 @@
 ﻿<UserControl x:Class="PointOfSale.Sides.FriedMiraakSelection"
-              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -78,9 +78,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row ="5" Grid.Column="2" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png">
-
-        </Image>
+        <Image Grid.Row ="4" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png" Grid.ColumnSpan="2" Margin="37,32,229,32" Grid.RowSpan="2"/>
         <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Small"  Margin="10,0,0,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
@@ -96,8 +94,8 @@
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <Label Content="Customize Fried Miraak" FontWeight= "Bold" FontFamily="Tahoma" FontSize="20" Grid.ColumnSpan="2" Margin="0,32,62,18" Grid.RowSpan="2" Grid.Column="1"/>
-        <Button Name="DoneClick" FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="6" Background="Gray" Margin="160,10,160,10" Grid.RowSpan="1" Grid.ColumnSpan="2"/>
-        <Button Name="BackClick" FontFamily="Tahoma" FontSize="20" Content="Back" Grid.Column="1" Foreground="White" Grid.Row="6" Background="Gray" Margin="160,10,160,10" Grid.ColumnSpan="2"/>
+        <Label Content="Customize Fried Miraak" FontWeight= "Bold" FontFamily="Tahoma" FontSize="20" Grid.ColumnSpan="3" Margin="110,32,219,18" Grid.RowSpan="2"/>
+        <Button Name="DoneClick" FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="3" Background="Gray" Margin="0,10,53,10" Grid.RowSpan="1" Grid.Column="1"/>
+        <Button Click="BackClick" FontFamily="Tahoma" FontSize="20" Content="Back" Grid.Column="1" Foreground="White" Grid.Row="2" Background="Gray" Margin="0,10,53,10" RenderTransformOrigin="0.831,-6.09"/>
     </Grid>
 </UserControl>

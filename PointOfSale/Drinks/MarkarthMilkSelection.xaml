@@ -98,6 +98,6 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         </CheckBox>
         <Label Content="Customize Markarth Milk" FontWeight= "Bold" FontFamily="Tahoma" FontSize="20" Grid.ColumnSpan="2" Margin="0,32,62,18" Grid.RowSpan="2" Grid.Column="1"/>
         <Button Name="DoneClick" FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="6" Background="Gray" Margin="160,10,160,10" Grid.RowSpan="1" Grid.ColumnSpan="2"/>
-        <Button Name="BackClick" FontFamily="Tahoma" FontSize="20" Content="Back" Grid.Column="1" Foreground="White" Grid.Row="6" Background="Gray" Margin="160,10,160,10" Grid.ColumnSpan="2"/>
+        <Button Click="BackClick" FontFamily="Tahoma" FontSize="20" Content="Back" Grid.Column="1" Foreground="White" Grid.Row="6" Background="Gray" Margin="160,10,160,10" Grid.ColumnSpan="2"/>
     </Grid>
 </UserControl>

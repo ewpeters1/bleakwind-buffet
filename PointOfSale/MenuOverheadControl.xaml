@@ -12,7 +12,7 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="250" MaxWidth="500"/>
+            <ColumnDefinition Width="300" MaxWidth="500"/>
         </Grid.ColumnDefinitions>
 
         <Border Name="menuBorder" BorderThickness="30">

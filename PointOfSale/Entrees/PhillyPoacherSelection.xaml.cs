@@ -18,9 +18,18 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class PhillyPoacherSelection : UserControl
     {
-        public PhillyPoacherSelection()
+
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public PhillyPoacherSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
         }
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
+        }
+
     }
 }

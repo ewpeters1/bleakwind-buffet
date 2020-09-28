@@ -18,9 +18,17 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class FriedMiraakSelection : UserControl
     {
-        public FriedMiraakSelection()
+        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public FriedMiraakSelection(MenuOverheadControl menuVal)
         {
             InitializeComponent();
+            menuLook = menuVal;
+        }
+
+        void BackClick(object sender, RoutedEventArgs e)
+        {
+            menuLook.menuBorder.Child = menuLook.menuSelect;
         }
     }
 }
