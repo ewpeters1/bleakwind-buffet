@@ -37,7 +37,7 @@ namespace PointOfSale
         public MenuOverheadControl()
         {
             InitializeComponent();
-            menuSelect.Selected += NewItem_Click;
+            menuSelect.Selected += PullUpList;
             menuBorder.Child = menuSelect;
         }
 
@@ -46,7 +46,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">button press</param>
         /// <param name="e">Reads the correct value from IOrderItem</param>
-        void NewItem_Click(object sender, SelEventHandler e)
+        void PullUpList(object sender, SelEventHandler e)
         {
             if (e.item.GetType().IsSubclassOf(typeof(BleakwindBuffet.Data.Entrees.Entree)))
             {
