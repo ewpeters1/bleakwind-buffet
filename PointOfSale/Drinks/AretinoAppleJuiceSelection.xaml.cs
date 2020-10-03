@@ -4,6 +4,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,6 +27,8 @@ namespace PointOfSale.Drinks
         /// Creates new Menu Overhad object
         /// </summary>
         private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// assigns menuVal to the new object 
