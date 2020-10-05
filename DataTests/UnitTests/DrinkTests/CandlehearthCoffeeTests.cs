@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Elliot Peters
  * Class: CandlehearthCoffeeTests.cs
  * Purpose: Test the CandlehearthCoffee.cs class in the Data library
  */
@@ -143,6 +143,78 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             ch.Size = size;
             ch.Decaf = decaf;
             Assert.Equal(name, ch.ToString());
+        }
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            CandlehearthCoffee ch = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(ch, "Ice", () =>
+            {
+                ch.Ice = true;
+            });
+
+            Assert.PropertyChanged(ch, "Ice", () =>
+            {
+                ch.Ice = false;
+            });
+
+
+        }
+
+        [Fact]
+        public void ChangingCreamNotifiesIceProperty()
+        {
+            CandlehearthCoffee ch = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(ch, "RoomForCream", () =>
+            {
+                ch.RoomForCream = true;
+            });
+
+            Assert.PropertyChanged(ch, "RoomForCream", () =>
+            {
+                ch.RoomForCream = false;
+            });
+
+
+        }
+
+        [Fact]
+        public void ChangingDecafNotifiesIceProperty()
+        {
+            CandlehearthCoffee ch = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(ch, "Decaf", () =>
+            {
+                ch.Decaf = true;
+            });
+
+            Assert.PropertyChanged(ch, "Decaf", () =>
+            {
+                ch.Decaf = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            CandlehearthCoffee ch = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(ch, "Size", () =>
+            {
+                ch.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(ch, "Size", () =>
+            {
+                ch.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(ch, "Size", () =>
+            {
+                ch.Size = Size.Large;
+            });
         }
     }
 }

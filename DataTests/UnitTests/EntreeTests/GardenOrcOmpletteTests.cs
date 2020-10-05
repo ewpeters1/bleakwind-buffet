@@ -127,5 +127,69 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             GardenOrcOmlette gO = new GardenOrcOmlette();
             Assert.Equal("Garden Orc Omlette", gO.ToString());
         }
+
+        [Fact]
+        public void ChangingBroccoliNotifiesIceProperty()
+        {
+            GardenOrcOmlette gO = new GardenOrcOmlette();
+
+            Assert.PropertyChanged(gO, "Broccoli", () =>
+            {
+                gO.Broccoli = true;
+            });
+
+            Assert.PropertyChanged(gO, "Broccoli", () =>
+            {
+                gO.Broccoli = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingMushroomsNotifiesIceProperty()
+        {
+            GardenOrcOmlette gO = new GardenOrcOmlette();
+
+            Assert.PropertyChanged(gO, "Mushrooms", () =>
+            {
+                gO.Mushrooms = true;
+            });
+
+            Assert.PropertyChanged(gO, "Mushrooms", () =>
+            {
+                gO.Mushrooms = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingTomatoNotifiesIceProperty()
+        {
+            GardenOrcOmlette gO = new GardenOrcOmlette();
+
+            Assert.PropertyChanged(gO, "Tomato", () =>
+            {
+                gO.Tomato = true;
+            });
+
+            Assert.PropertyChanged(gO, "Tomato", () =>
+            {
+                gO.Tomato = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingCheddarNotifiesIceProperty()
+        {
+            GardenOrcOmlette gO = new GardenOrcOmlette();
+
+            Assert.PropertyChanged(gO, "Cheddar", () =>
+            {
+                gO.Cheddar = true;
+            });
+
+            Assert.PropertyChanged(gO, "Cheddar", () =>
+            {
+                gO.Cheddar = false;
+            });
+        }
     }
 }

@@ -31,7 +31,11 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Broccoli
         {
             get => broccoli;
-            set => broccoli = value;
+            set
+            {
+                broccoli = value;
+                InvokePropertyChanged("Broccoli");
+            }
         }
 
         /// <summary>
@@ -44,7 +48,11 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Mushrooms
         {
             get => mushrooms;
-            set => mushrooms = value;
+            set
+            {
+                mushrooms = value;
+                InvokePropertyChanged("Mushrooms");
+            }
         }
 
         /// <summary>
@@ -57,7 +65,11 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Tomato
         {
             get => tomato;
-            set => tomato = value;
+            set
+            {
+                tomato = value;
+                InvokePropertyChanged("Tomato");
+            }
         }
 
         /// <summary>
@@ -70,7 +82,11 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Cheddar
         {
             get => cheddar;
-            set => cheddar = value;
+            set
+            {
+                cheddar = value;
+                InvokePropertyChanged("Cheddar");
+            }
         }
 
         /// <summary>

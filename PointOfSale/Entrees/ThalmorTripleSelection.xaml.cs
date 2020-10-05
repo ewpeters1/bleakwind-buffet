@@ -2,6 +2,7 @@
  * Elliot Peters
  * ThalmorTripleSelection.xaml.cs
  */
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,6 +28,8 @@ namespace PointOfSale.Entrees
         /// </summary>
         private MenuOverheadControl menuLook = new MenuOverheadControl();
 
+        private ThalmorTriple tt = new ThalmorTriple();
+
         /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
@@ -35,6 +38,7 @@ namespace PointOfSale.Entrees
         {
             InitializeComponent();
             menuLook = menuVal;
+            DataContext = tt;
         }
 
         /// <summary>

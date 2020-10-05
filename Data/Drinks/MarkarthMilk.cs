@@ -59,7 +59,11 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Ice
         {
             get => ice;
-            set => ice = value;
+            set
+            {
+                ice = value;
+                InvokePropertyChanged("Ice");
+            }
         }
 
         /// <summary>

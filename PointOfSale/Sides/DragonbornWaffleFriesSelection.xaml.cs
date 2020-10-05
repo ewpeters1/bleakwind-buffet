@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Size = BleakwindBuffet.Data.Enums.Size;
+using BleakwindBuffet.Data.Sides;
 
 namespace PointOfSale.Sides
 {
@@ -29,6 +31,11 @@ namespace PointOfSale.Sides
         private MenuOverheadControl menuLook = new MenuOverheadControl();
 
         /// <summary>
+        /// Private backing variable 
+        /// </summary>
+        private DragonbornWaffleFries dw = new DragonbornWaffleFries();
+
+        /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
@@ -36,6 +43,7 @@ namespace PointOfSale.Sides
         {
             InitializeComponent();
             menuLook = menuVal;
+            DataContext = dw;
         }
 
         /// <summary>
@@ -46,6 +54,24 @@ namespace PointOfSale.Sides
         void BackClick(object sender, RoutedEventArgs e)
         {
             menuLook.menuBorder.Child = menuLook.menuSelect;
+        }
+
+        /// <summary>
+        /// Dragon born fries Event for chooosing correct values
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is DragonbornWaffleFries)
+            {
+                foreach (ComboBoxItem s in e.AddedItems)
+                {
+                    if (s.Name == "Small") dw.Size = Size.Small;
+                    if (s.Name == "Medium") dw.Size = Size.Medium;
+                    if (s.Name == "Large") dw.Size = Size.Large;
+                }
+            }
         }
     }
 }

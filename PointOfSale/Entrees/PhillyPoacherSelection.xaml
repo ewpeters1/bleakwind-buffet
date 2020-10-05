@@ -79,17 +79,17 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Image Grid.Row ="3" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png" Grid.ColumnSpan="2" Margin="54,64,212,0" Grid.RowSpan="2"/>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Sirloin"  Margin="10,0,0,0">
+        <CheckBox Grid.Row ="2" FontFamily="Tahoma" IsChecked="{Binding Path = Sirloin}" Content="Sirloin"  Margin="10,0,0,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Onion"  Margin="10,30,0,0">
+        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Onion" IsChecked="{Binding Path = Onion}" Margin="10,30,0,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Roll" Margin="10,0,0,25" Grid.RowSpan="2">
+        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Roll" IsChecked="{Binding Path = Roll}" Margin="10,0,0,25" Grid.RowSpan="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>

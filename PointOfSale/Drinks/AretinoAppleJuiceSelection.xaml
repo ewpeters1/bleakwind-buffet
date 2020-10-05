@@ -78,28 +78,26 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Image Grid.Row ="2" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png" Grid.ColumnSpan="2"  Grid.RowSpan="2"/>
-        <CheckBox Grid.Row ="1" FontFamily="Tahoma" Content="Small"  Margin="10,0,0,0">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Medium"  Margin="10,0,0,0">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Large" Margin="10,0,0,25" Grid.RowSpan="2">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="4" FontFamily="Tahoma" Content="Ice" Margin="10,0,25,0" Grid.RowSpan="2">
+        
+        <CheckBox Name="IceCheck" IsChecked="{Binding Path = Ice}" Grid.Row ="3" FontFamily="Tahoma" Content="Ice" Margin="10,0,25,0" Grid.RowSpan="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
         <Label Content="Customize Aretino Apple Juice" FontWeight= "Bold" FontFamily="Tahoma" FontSize="12" Grid.Row="0" />
-
+        <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Cancel" Foreground="White" Grid.Row="6" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="5" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ComboBox x:Name="SizeBox" SelectionChanged ="SizeBox_SelectionChanged" Width="120" Height="30" Grid.Row="1" HorizontalAlignment="Left">
+            <ComboBoxItem Name ="Small">
+                Small
+            </ComboBoxItem>
+            <ComboBoxItem Name ="Medium">
+                Medium
+            </ComboBoxItem>
+            <ComboBoxItem Name="Large">
+                Large
+            </ComboBoxItem>
+        </ComboBox>
+
     </Grid>
 </UserControl>

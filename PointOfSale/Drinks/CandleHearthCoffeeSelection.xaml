@@ -78,38 +78,34 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Image Grid.Row ="4" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <CheckBox Grid.Row ="1" FontFamily="Tahoma" Content="Room for Cream">
+        <CheckBox Grid.Row ="1" FontFamily="Tahoma" Content="Room for Cream" IsChecked="{Binding Path = RoomForCream}">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Decaf"  >
+        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Decaf"  IsChecked="{Binding Path = Decaf}" >
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Ice">
+        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Ice" IsChecked="{Binding Path = Ice}">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="1" Grid.Column="1" FontFamily="Tahoma" Content="Small" Grid.RowSpan="2">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="2" Grid.Column="1" FontFamily="Tahoma" Content="Medium" Grid.RowSpan="2">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="3" Grid.Column="1" FontFamily="Tahoma" Content="Large" Grid.RowSpan="2">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
+        <ComboBox  x:Name="SizeBox" SelectionChanged ="SizeBox_SelectionChanged" Width="120" Height="30" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
+            <ComboBoxItem Name ="Small">
+                Small
+            </ComboBoxItem>
+            <ComboBoxItem Name ="Medium">
+                Medium
+            </ComboBoxItem>
+            <ComboBoxItem Name ="Large">
+                Large
+            </ComboBoxItem>
+        </ComboBox>
         <Label Content="Customize Candlehearth Coffee" FontWeight= "Bold" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="1" Grid.RowSpan="1"/>
-
+        <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Cancel" Foreground="White" Grid.Row="5" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="4" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

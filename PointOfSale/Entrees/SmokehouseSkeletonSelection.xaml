@@ -79,22 +79,22 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Image Grid.Row ="3" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png" Grid.ColumnSpan="2" Margin="23,64,243,0" Grid.RowSpan="2"/>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Egg" Margin="10,30,0,25" Grid.RowSpan="2">
+        <CheckBox Grid.Row ="2" FontFamily="Tahoma" IsChecked="{Binding Path = Egg}" Content="Egg" Margin="10,30,0,25" Grid.RowSpan="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Sausage Link"  Margin="10,0,0,0">
+        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Sausage Link" IsChecked="{Binding Path = SausageLink}" Margin="10,0,0,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Hashbrowns"  Margin="10,0,0,0">
+        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Hashbrowns" IsChecked="{Binding Path = Hashbrowns}" Margin="10,0,0,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Pancake" Margin="10,30,0,25" Grid.RowSpan="2">
+        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Pancake" Margin="10,30,0,25" IsChecked="{Binding Path = Pancake}" Grid.RowSpan="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>

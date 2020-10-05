@@ -57,13 +57,11 @@ namespace BleakwindBuffet.Data.Drinks
         private SodaFlavor flavor = SodaFlavor.Cherry;
         public SodaFlavor Flavor
         {
-            get
-            {
-                return flavor;
-            }
+            get => flavor;
             set
             {
                 flavor = value;
+                InvokePropertyChanged("Flavor");
             }
         }
 
@@ -78,7 +76,11 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Ice
         {
             get => ice;
-            set => ice = value;
+            set
+            {
+                ice = value;
+                InvokePropertyChanged("Ice");
+            }
         }
 
         /// <summary>

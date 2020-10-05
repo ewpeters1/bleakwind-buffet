@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Entrees;
 
 namespace PointOfSale.Entrees
 {
@@ -28,6 +29,11 @@ namespace PointOfSale.Entrees
         private MenuOverheadControl menuLook = new MenuOverheadControl();
 
         /// <summary>
+        /// Private backing variable for the dd
+        /// </summary>
+        private DoubleDraugr dd = new DoubleDraugr();
+
+        /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
@@ -35,6 +41,7 @@ namespace PointOfSale.Entrees
         {
             InitializeComponent();
             menuLook = menuVal;
+            DataContext = dd;
         }
 
         /// <summary>

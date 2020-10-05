@@ -2,6 +2,7 @@
  * Elliot Peters
  * PhillyPoacherSelection.xaml.cs
  */
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,6 +29,11 @@ namespace PointOfSale.Entrees
         private MenuOverheadControl menuLook = new MenuOverheadControl();
 
         /// <summary>
+        /// creates poacher backing variable
+        /// </summary>
+        private PhillyPoacher pp = new PhillyPoacher();
+
+        /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
@@ -35,6 +41,7 @@ namespace PointOfSale.Entrees
         {
             InitializeComponent();
             menuLook = menuVal;
+            DataContext = pp;
         }
         /// <summary>
         /// Creates back click event which reurn the border to its original display of the menu selection

@@ -14,6 +14,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Enums;
+using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace PointOfSale.Drinks
 {
@@ -26,6 +30,8 @@ namespace PointOfSale.Drinks
         /// Creates new Menu Overhad object
         /// </summary>
         private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        private WarriorWater ww = new WarriorWater();
 
         /// <summary>
         /// assigns menuVal to the new object 
@@ -45,6 +51,24 @@ namespace PointOfSale.Drinks
         void BackClick(object sender, RoutedEventArgs e)
         {
             menuLook.menuBorder.Child = menuLook.menuSelect;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is WarriorWater)
+            {
+                foreach (ComboBoxItem s in e.AddedItems)
+                {
+                    if (s.Name == "Small") ww.Size = Size.Small;
+                    if (s.Name == "Medium") ww.Size = Size.Medium;
+                    if (s.Name == "Large") ww.Size = Size.Large;
+                }
+            }
         }
     }
 }

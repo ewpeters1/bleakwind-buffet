@@ -4,18 +4,41 @@
  * Purpose: Used as base file for entrees
  */
 using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public abstract class Side : IOrderItem
+    public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
+        protected Size size = Size.Small;
+
+        public virtual event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// This is a method to simplify the calling process if Invoking a property
+        /// </summary>
+        /// <param name="name">the name of the invoked</param>
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
         /// <summary>
         /// Size of drink
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual Size Size 
+        {
+            get => size;
+            set
+            {
+                size = value;
+                InvokePropertyChanged("Size");
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
+            }
+        }
 
         /// <summary>
         /// Price of drink

@@ -1,11 +1,12 @@
 ﻿/*
- * Author: ELliot Peters
+ * Author: Elliot Peters
  * Title: Drink.cs
  * Purpose: Used as base file for drinks
  */
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -13,12 +14,36 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A base class representing common properties of drinks 
     /// </summary>
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
+
+        protected Size size = Size.Small;
+
+        public virtual event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// This is a method to simplify the calling process if Invoking a property
+        /// </summary>
+        /// <param name="name">the name of the invoked</param>
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
         /// <summary>
         /// Size of drink
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual Size Size 
+        {
+            get => size;
+            set
+            {
+                size = value;
+                InvokePropertyChanged("Size");
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
+            }
+        }
 
         /// <summary>
         /// Price of drink

@@ -15,6 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Enums;
+using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace PointOfSale.Drinks
 {
@@ -28,7 +32,10 @@ namespace PointOfSale.Drinks
         /// </summary>
         private MenuOverheadControl menuLook = new MenuOverheadControl();
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Creates aretino object from data
+        /// </summary>
+        private AretinoAppleJuice aj = new AretinoAppleJuice();
 
         /// <summary>
         /// assigns menuVal to the new object 
@@ -38,6 +45,7 @@ namespace PointOfSale.Drinks
         {
             InitializeComponent();
             menuLook = menuVal;
+            DataContext = aj;
         }
 
         /// <summary>
@@ -48,6 +56,24 @@ namespace PointOfSale.Drinks
         void BackClick(object sender, RoutedEventArgs e)
         {
             menuLook.menuBorder.Child = menuLook.menuSelect;
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(DataContext is AretinoAppleJuice)
+            {
+                foreach(ComboBoxItem s in e.AddedItems)
+                {
+                    if (s.Name == "Small") aj.Size = Size.Small;
+                    if (s.Name == "Medium") aj.Size = Size.Medium;
+                    if (s.Name == "Large") aj.Size = Size.Large;
+                }
+            }
         }
 
     }

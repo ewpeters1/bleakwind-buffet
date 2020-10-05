@@ -2,6 +2,7 @@
  * Elliot Peters
  * GardenOrcSelection.xaml.cs
  */
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,6 +29,11 @@ namespace PointOfSale.Entrees
         private MenuOverheadControl menuLook = new MenuOverheadControl();
 
         /// <summary>
+        /// omlette bacing variable
+        /// </summary>
+        private GardenOrcOmlette gO = new GardenOrcOmlette();
+
+        /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
@@ -35,6 +41,7 @@ namespace PointOfSale.Entrees
         {
             InitializeComponent();
             menuLook = menuVal;
+            DataContext = gO;
         }
 
         /// <summary>

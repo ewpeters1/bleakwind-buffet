@@ -79,27 +79,27 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Image Grid.Row ="4" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png" RenderTransformOrigin="-0.41,-0.013" Grid.ColumnSpan="2" Margin="86,10,139,10" Grid.RowSpan="2"/>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Bun" Margin="10,25,0,25" Grid.RowSpan="2">
+        <CheckBox Grid.Row ="2" FontFamily="Tahoma" IsChecked="{Binding Path = Bun}" Content="Bun" Margin="10,25,0,25" Grid.RowSpan="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Ketchup"  Margin="10,0,0,0">
+        <CheckBox Grid.Row ="2" FontFamily="Tahoma" IsChecked="{Binding Path = Ketchup}" Content="Ketchup"  Margin="10,0,0,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Mustard"  Margin="10,0,0,0">
+        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Mustard" IsChecked="{Binding Path = Mustard}"  Margin="10,0,0,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Pickle" Margin="10,25,0,25" Grid.RowSpan="2">
+        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Pickle" IsChecked="{Binding Path = Pickle}" Margin="10,25,0,25" Grid.RowSpan="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="4" FontFamily="Tahoma" Content="Cheese" Margin="10,0,10,0">
+        <CheckBox Grid.Row ="4" FontFamily="Tahoma" Content="Cheese" IsChecked="{Binding Path = Cheese}" Margin="10,0,10,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
