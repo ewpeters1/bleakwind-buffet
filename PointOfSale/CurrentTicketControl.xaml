@@ -7,6 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="200">
     <DockPanel>
+        <Button DockPanel.Dock="Bottom" Height="60" FontSize="20" FontFamily="Tahoma"
+                 Background="ForestGreen" Foreground="White" >
+            Complete Order
+        </Button>
         <TextBlock DockPanel.Dock="Top" FontWeight= "Bold" TextAlignment="Center" FontSize="20">
             Order Number (#)
         </TextBlock>
