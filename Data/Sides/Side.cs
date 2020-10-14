@@ -37,6 +37,18 @@ namespace BleakwindBuffet.Data.Sides
                 InvokePropertyChanged("Size");
                 InvokePropertyChanged("Price");
                 InvokePropertyChanged("Calories");
+                InvokePropertyChanged("TrueString");
+            }
+        }
+
+        /// <summary>
+        /// Allows for better display in xaml for true string
+        /// </summary>
+        public virtual string TrueString
+        {
+            get
+            {
+                return this.ToString();
             }
         }
 

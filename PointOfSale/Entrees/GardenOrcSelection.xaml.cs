@@ -23,24 +23,17 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class GardenOrcSelection : UserControl
     {
-        /// <summary>
-        /// Creates new Menu Overhad object
-        /// </summary>
-        private MenuOverheadControl menuLook = new MenuOverheadControl();
 
-        /// <summary>
-        /// omlette bacing variable
-        /// </summary>
-        private GardenOrcOmlette gO = new GardenOrcOmlette();
+        CurrentTicketControl parent;
 
         /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
-        public GardenOrcSelection(MenuOverheadControl menuVal)
+        public GardenOrcSelection(GardenOrcOmlette gO, CurrentTicketControl menu)
         {
             InitializeComponent();
-            menuLook = menuVal;
+            parent = menu;
             DataContext = gO;
         }
 
@@ -51,7 +44,7 @@ namespace PointOfSale.Entrees
         /// <param name="e">Button Event</param>
         void BackClick(object sender, RoutedEventArgs e)
         {
-            menuLook.menuBorder.Child = menuLook.menuSelect;
+            parent.menuBorder1.Child = new MenuSelection(parent);
         }
     }
 }

@@ -25,6 +25,17 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Allows for better display in xaml for true string
+        /// </summary>
+        public virtual string TrueString
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
         /// Price of drink
         /// </summary>
         /// <value>

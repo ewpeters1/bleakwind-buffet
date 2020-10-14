@@ -26,10 +26,8 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class WarriorWaterSelection : UserControl
     {
-        /// <summary>
-        /// Creates new Menu Overhad object
-        /// </summary>
-        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        CurrentTicketControl parent;
 
         private WarriorWater ww = new WarriorWater();
 
@@ -37,10 +35,11 @@ namespace PointOfSale.Drinks
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
-        public WarriorWaterSelection(MenuOverheadControl menuVal)
+        public WarriorWaterSelection(CurrentTicketControl menuVal, WarriorWater ww)
         {
             InitializeComponent();
-            menuLook = menuVal;
+            parent = menuVal;
+            DataContext = ww;
         }
 
         /// <summary>
@@ -50,7 +49,7 @@ namespace PointOfSale.Drinks
         /// <param name="e">Button Event</param>
         void BackClick(object sender, RoutedEventArgs e)
         {
-            menuLook.menuBorder.Child = menuLook.menuSelect;
+            parent.menuBorder1.Child = new MenuSelection(parent);
         }
 
         /// <summary>

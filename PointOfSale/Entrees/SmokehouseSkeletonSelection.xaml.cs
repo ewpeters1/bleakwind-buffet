@@ -23,21 +23,17 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class SmokehouseSkeletonSelection : UserControl
     {
-        /// <summary>
-        /// Creates new Menu Overhad object
-        /// </summary>
-        private MenuOverheadControl menuLook = new MenuOverheadControl();
 
-        private SmokehouseSkeleton ss = new SmokehouseSkeleton();
+        CurrentTicketControl parent;
 
         /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
-        public SmokehouseSkeletonSelection(MenuOverheadControl menuVal)
+        public SmokehouseSkeletonSelection(CurrentTicketControl menu, SmokehouseSkeleton ss)
         {
             InitializeComponent();
-            menuLook = menuVal;
+            parent = menu;
             DataContext = ss;
         }
 
@@ -48,7 +44,7 @@ namespace PointOfSale.Entrees
         /// <param name="e">Button Event</param>
         void BackClick(object sender, RoutedEventArgs e)
         {
-            menuLook.menuBorder.Child = menuLook.menuSelect;
+            parent.menuBorder1.Child = new MenuSelection(parent);
         }
     }
 }

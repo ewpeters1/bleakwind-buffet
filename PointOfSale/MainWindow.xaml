@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Bleakwind Buffet Point Of Sale" Height="450" Width="800">
     <Grid>
-        <local:MenuOverheadControl></local:MenuOverheadControl>
+        <Grid.Background>
+            <ImageBrush ImageSource="{StaticResource MountainImage}"/>
+        </Grid.Background>
+        <local:CurrentTicketControl Margin="30,30,30,30"></local:CurrentTicketControl>
     </Grid>
 </Window>

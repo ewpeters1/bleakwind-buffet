@@ -9,6 +9,7 @@ using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 using System.Xml.Serialization;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -215,6 +216,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 ch.Size = Size.Large;
             });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            CandlehearthCoffee ch = new CandlehearthCoffee();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ch);
         }
     }
 }

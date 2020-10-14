@@ -24,23 +24,18 @@ namespace PointOfSale.Entrees
     public partial class PhillyPoacherSelection : UserControl
     {
         /// <summary>
-        /// Creates new Menu Overhad object
+        /// Creates current ticket backing
         /// </summary>
-        private MenuOverheadControl menuLook = new MenuOverheadControl();
-
-        /// <summary>
-        /// creates poacher backing variable
-        /// </summary>
-        private PhillyPoacher pp = new PhillyPoacher();
+        CurrentTicketControl parent;
 
         /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
-        public PhillyPoacherSelection(MenuOverheadControl menuVal)
+        public PhillyPoacherSelection(PhillyPoacher pp, CurrentTicketControl menu)
         {
             InitializeComponent();
-            menuLook = menuVal;
+            parent = menu;
             DataContext = pp;
         }
         /// <summary>
@@ -50,7 +45,7 @@ namespace PointOfSale.Entrees
         /// <param name="e">Button Event</param>
         void BackClick(object sender, RoutedEventArgs e)
         {
-            menuLook.menuBorder.Child = menuLook.menuSelect;
+            parent.menuBorder1.Child = new MenuSelection(parent);
         }
 
     }

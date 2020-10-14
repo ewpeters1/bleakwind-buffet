@@ -23,21 +23,18 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class ThalmorTripleSelection : UserControl
     {
-        /// <summary>
-        /// Creates new Menu Overhad object
-        /// </summary>
-        private MenuOverheadControl menuLook = new MenuOverheadControl();
 
-        private ThalmorTriple tt = new ThalmorTriple();
+
+        CurrentTicketControl parent;
 
         /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
-        public ThalmorTripleSelection(MenuOverheadControl menuVal)
+        public ThalmorTripleSelection(CurrentTicketControl menu, ThalmorTriple tt)
         {
             InitializeComponent();
-            menuLook = menuVal;
+            parent = menu;
             DataContext = tt;
         }
 
@@ -48,7 +45,7 @@ namespace PointOfSale.Entrees
         /// <param name="e">Button Event</param>
         void BackClick(object sender, RoutedEventArgs e)
         {
-            menuLook.menuBorder.Child = menuLook.menuSelect;
+            parent.menuBorder1.Child = new MenuSelection(parent);
         }
 
     }

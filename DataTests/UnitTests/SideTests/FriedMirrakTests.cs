@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -99,6 +100,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             {
                 fm.Size = Size.Large;
             });
+        }
+
+        [Fact]
+        public void InheritsInterface()
+        {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(fm);
         }
     }
 }

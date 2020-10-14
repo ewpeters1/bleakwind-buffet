@@ -86,7 +86,7 @@
             Menu
             </TextBlock>
         </DockPanel>
-        <Image Grid.Row="5" Grid.RowSpan="4" Grid.Column="2" Margin="0,39,0,0"/>
+        <Image Source="{StaticResource SkyrimLogo}" Grid.Row="6" Grid.RowSpan="3" Grid.Column="1"/>
         <Button Click="BriarheartBurgerB" Margin="20,0,20,0" Grid.Row="1" Grid.RowSpan="1" FontSize="10" FontFamily="Tahoma"
                  Background="Black" Foreground="White">
             Briarheart Burger

@@ -6,14 +6,13 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public class MarkarthMilk : Drink 
     {
-        private Size size = Size.Small;
-
         /// <summary>
         /// The property for Price, and returns a value based on the size
         /// </summary>
@@ -63,6 +62,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -74,7 +74,11 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> instructions = new List<string>();
-                if (Ice) instructions.Add("Add ice");
+                if (Ice)
+                {
+                    instructions.Add("Add ice");
+
+                }
                 return instructions;
             }
         }

@@ -23,24 +23,18 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class DoubleDraugrSelection : UserControl
     {
-        /// <summary>
-        /// Creates new Menu Overhad object
-        /// </summary>
-        private MenuOverheadControl menuLook = new MenuOverheadControl();
 
-        /// <summary>
-        /// Private backing variable for the dd
-        /// </summary>
-        private DoubleDraugr dd = new DoubleDraugr();
+
+        CurrentTicketControl parent;
 
         /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
-        public DoubleDraugrSelection(MenuOverheadControl menuVal)
+        public DoubleDraugrSelection(DoubleDraugr dd, CurrentTicketControl menu)
         {
             InitializeComponent();
-            menuLook = menuVal;
+            parent = menu;
             DataContext = dd;
         }
 
@@ -51,7 +45,7 @@ namespace PointOfSale.Entrees
         /// <param name="e">Button Event</param>
         void BackClick(object sender, RoutedEventArgs e)
         {
-            menuLook.menuBorder.Child = menuLook.menuSelect;
+            parent.menuBorder1.Child = new MenuSelection(parent);
         }
     }
 }

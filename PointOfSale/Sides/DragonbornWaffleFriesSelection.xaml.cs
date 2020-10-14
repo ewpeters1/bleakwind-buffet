@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Size = BleakwindBuffet.Data.Enums.Size;
 using BleakwindBuffet.Data.Sides;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale.Sides
 {
@@ -25,11 +26,8 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class DragonbornWaffleFriesSelection : UserControl
     {
-        /// <summary>
-        /// Creates new Menu Overhad object
-        /// </summary>
-        private MenuOverheadControl menuLook = new MenuOverheadControl();
 
+        CurrentTicketControl parent;
         /// <summary>
         /// Private backing variable 
         /// </summary>
@@ -39,10 +37,10 @@ namespace PointOfSale.Sides
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
-        public DragonbornWaffleFriesSelection(MenuOverheadControl menuVal)
+        public DragonbornWaffleFriesSelection(CurrentTicketControl menuVal, DragonbornWaffleFries dw)
         {
             InitializeComponent();
-            menuLook = menuVal;
+            parent = menuVal;
             DataContext = dw;
         }
 
@@ -53,7 +51,7 @@ namespace PointOfSale.Sides
         /// <param name="e">Button Event</param>
         void BackClick(object sender, RoutedEventArgs e)
         {
-            menuLook.menuBorder.Child = menuLook.menuSelect;
+            parent.menuBorder1.Child = new MenuSelection(parent);
         }
 
         /// <summary>

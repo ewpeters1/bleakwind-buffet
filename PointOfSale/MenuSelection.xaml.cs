@@ -18,6 +18,10 @@ using System.Windows.Shapes;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Drinks;
+using PointOfSale.Entrees;
+using BleakwindBuffet.Data;
+using PointOfSale.Drinks;
+using PointOfSale.Sides;
 
 namespace PointOfSale
 {
@@ -26,17 +30,16 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuSelection : UserControl
     {
-        /// <summary>
-        /// creates an event form the SelEventHandler class. This is used to invoke the correct item in the press
-        /// </summary>
-        public event EventHandler<SelEventHandler> Selected;
+
+        CurrentTicketControl parent;
 
         /// <summary>
         /// initialzes the component
         /// </summary>
-        public MenuSelection()
+        public MenuSelection(CurrentTicketControl res)
         {
             InitializeComponent();
+            parent = res;
         }
 
         /// <summary>
@@ -46,8 +49,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void BriarheartBurgerB(object sender, RoutedEventArgs e)
         {
-            BriarheartBurger resItem = new BriarheartBurger();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            BrairheartBurgerSelection item = new BrairheartBurgerSelection(new BriarheartBurger(), parent);
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -57,9 +62,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void PhillyPoacherB(object sender, RoutedEventArgs e)
         {
-            PhillyPoacher resItem = new PhillyPoacher();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
-
+            PhillyPoacherSelection item = new PhillyPoacherSelection(new PhillyPoacher(), parent);
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -69,8 +75,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void DoubleDraugrB(object sender, RoutedEventArgs e)
         {
-            DoubleDraugr resItem = new DoubleDraugr();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            DoubleDraugrSelection item = new DoubleDraugrSelection(new DoubleDraugr(), parent);
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -80,8 +88,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void ThalmorTripleB(object sender, RoutedEventArgs e)
         {
-            ThalmorTriple resItem = new ThalmorTriple();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            ThalmorTripleSelection item = new ThalmorTripleSelection(parent, new ThalmorTriple());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -91,8 +101,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void SmokehouseB(object sender, RoutedEventArgs e)
         {
-            SmokehouseSkeleton resItem = new SmokehouseSkeleton();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            SmokehouseSkeletonSelection item = new SmokehouseSkeletonSelection(parent, new SmokehouseSkeleton());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -102,8 +114,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void GardenOrcB(object sender, RoutedEventArgs e)
         {
-            GardenOrcOmlette resItem = new GardenOrcOmlette();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            GardenOrcSelection item = new GardenOrcSelection(new GardenOrcOmlette(), parent);
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -113,8 +127,8 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void ThugsTB(object sender, RoutedEventArgs e)
         {
-            ThugsTbone resItem = new ThugsTbone();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            Order o = (Order)parent.DataContext;
+            o.Add(new ThugsTbone());
         }
 
         /// <summary>
@@ -124,8 +138,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void SailorSodaB(object sender, RoutedEventArgs e)
         {
-            SailorSoda resItem = new SailorSoda();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            SailorSodaSelection item = new SailorSodaSelection(parent, new SailorSoda());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -135,8 +151,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void MarkarthMilkB(object sender, RoutedEventArgs e)
         {
-            MarkarthMilk resItem = new MarkarthMilk();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            MarkarthMilkSelection item = new MarkarthMilkSelection(parent, new MarkarthMilk());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -146,8 +164,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void AretinoB(object sender, RoutedEventArgs e)
         {
-            AretinoAppleJuice resItem = new AretinoAppleJuice();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            AretinoAppleJuiceSelection item = new AretinoAppleJuiceSelection(parent, new AretinoAppleJuice());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -157,8 +177,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void CandlehearthB(object sender, RoutedEventArgs e)
         {
-            CandlehearthCoffee resItem = new CandlehearthCoffee();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            CandleHearthCoffeeSelection item = new CandleHearthCoffeeSelection(parent, new CandlehearthCoffee());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -168,8 +190,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void WarriorWB(object sender, RoutedEventArgs e)
         {
-            WarriorWater resItem = new WarriorWater();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            WarriorWaterSelection item = new WarriorWaterSelection(parent, new WarriorWater());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -179,8 +203,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void VokunSaladB(object sender, RoutedEventArgs e)
         {
-            VokunSalad resItem = new VokunSalad();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            VokunSaladSelection item = new VokunSaladSelection(parent, new VokunSalad());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -190,8 +216,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void FriedMB(object sender, RoutedEventArgs e)
         {
-            FriedMiraak resItem = new FriedMiraak();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            FriedMiraakSelection item = new FriedMiraakSelection(parent, new FriedMiraak());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -201,8 +229,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void MadOB(object sender, RoutedEventArgs e)
         {
-            MadOtarGrits resItem = new MadOtarGrits();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            MadOtarGritsSelection item = new MadOtarGritsSelection(parent, new MadOtarGrits());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -212,8 +242,10 @@ namespace PointOfSale
         /// <param name="e">the buttno event</param>
         void DragonBornB(object sender, RoutedEventArgs e)
         {
-            DragonbornWaffleFries resItem = new DragonbornWaffleFries();
-            Selected?.Invoke(this, new SelEventHandler() { item = resItem });
+            DragonbornWaffleFriesSelection item = new DragonbornWaffleFriesSelection(parent, new DragonbornWaffleFries());
+            parent.menuBorder1.Child = item;
+            Order o = (Order)parent.DataContext;
+            o.Add((IOrderItem)item.DataContext);
         }
     }
 }

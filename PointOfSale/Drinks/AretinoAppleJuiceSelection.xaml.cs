@@ -27,24 +27,23 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class AretinoAppleJuiceSelection : UserControl
     {
-        /// <summary>
-        /// Creates new Menu Overhad object
-        /// </summary>
-        private MenuOverheadControl menuLook = new MenuOverheadControl();
+
+        CurrentTicketControl parent;
 
         /// <summary>
         /// Creates aretino object from data
         /// </summary>
         private AretinoAppleJuice aj = new AretinoAppleJuice();
 
+
         /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
-        public AretinoAppleJuiceSelection(MenuOverheadControl menuVal)
+        public AretinoAppleJuiceSelection(CurrentTicketControl menu, AretinoAppleJuice aj)
         {
             InitializeComponent();
-            menuLook = menuVal;
+            parent  = menu;
             DataContext = aj;
         }
 
@@ -55,7 +54,7 @@ namespace PointOfSale.Drinks
         /// <param name="e">Button Event</param>
         void BackClick(object sender, RoutedEventArgs e)
         {
-            menuLook.menuBorder.Child = menuLook.menuSelect;
+            parent.menuBorder1.Child = new MenuSelection(parent);
         }
         
         /// <summary>

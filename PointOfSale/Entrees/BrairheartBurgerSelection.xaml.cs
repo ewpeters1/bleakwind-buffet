@@ -25,24 +25,16 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class BrairheartBurgerSelection : UserControl
     {
-        /// <summary>
-        /// Creates new Menu Overhad object
-        /// </summary>
-        private MenuOverheadControl menuLook = new MenuOverheadControl();
-
-        /// <summary>
-        /// Creates brairheart object from data
-        /// </summary>
-        private BriarheartBurger bb = new BriarheartBurger();
+        CurrentTicketControl parent;
 
         /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
-        public BrairheartBurgerSelection(MenuOverheadControl menuVal)
+        public BrairheartBurgerSelection(BriarheartBurger bb, CurrentTicketControl menu)
         {
             InitializeComponent();
-            menuLook = menuVal;
+            parent = menu;
             DataContext = bb;
         }
 
@@ -51,9 +43,9 @@ namespace PointOfSale.Entrees
         /// </summary>
         /// <param name="sender">Sender object</param>
         /// <param name="e">Button Event</param>
-        void BackClick(object sender, RoutedEventArgs e)
+        void AddDone_Click(object sender, RoutedEventArgs e)
         {
-            menuLook.menuBorder.Child = menuLook.menuSelect;
+            parent.menuBorder1.Child = new MenuSelection(parent);           
         }
     }
 }

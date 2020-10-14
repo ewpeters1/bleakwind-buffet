@@ -35,6 +35,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 broccoli = value;
                 InvokePropertyChanged("Broccoli");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -52,6 +53,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 mushrooms = value;
                 InvokePropertyChanged("Mushrooms");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -69,6 +71,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 tomato = value;
                 InvokePropertyChanged("Tomato");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -86,6 +89,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 cheddar = value;
                 InvokePropertyChanged("Cheddar");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -97,10 +101,26 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Broccoli) instructions.Add("Hold broccoli");
-                if (!Mushrooms) instructions.Add("Hold mushrooms");
-                if (!Tomato) instructions.Add("Hold tomato");
-                if (!Cheddar) instructions.Add("Hold cheddar");
+                if (!Broccoli)
+                {
+                    instructions.Add("Hold broccoli");
+
+                }
+                if (!Mushrooms)
+                {
+                    instructions.Add("Hold mushrooms");
+
+                }
+                if (!Tomato)
+                {
+                    instructions.Add("Hold tomato");
+
+                }
+                if (!Cheddar)
+                {
+                    instructions.Add("Hold cheddar");
+
+                }
                 return instructions;
             }
         }

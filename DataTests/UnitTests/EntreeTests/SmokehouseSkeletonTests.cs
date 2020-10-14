@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -193,6 +194,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             {
                 ss.Pancake = false;
             });
+        }
+
+        [Fact]
+        public void InheritsInterface()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ss);
         }
 
     }

@@ -35,6 +35,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 ketchup = value;
                 InvokePropertyChanged("Ketchup");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -52,6 +53,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 bun = value;
                 InvokePropertyChanged("Bun");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -69,6 +71,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 mustard = value;
                 InvokePropertyChanged("Mustard");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -87,6 +90,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 pickle = value;
                 InvokePropertyChanged("Pickle");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -104,6 +108,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 cheese = value;
                 InvokePropertyChanged("Cheese");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -115,11 +120,26 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Bun) instructions.Add("Hold bun");
-                if (!Ketchup) instructions.Add("Hold ketchup");
-                if (!Mustard) instructions.Add("Hold mustard");
-                if (!Pickle) instructions.Add("Hold pickle");
-                if (!cheese) instructions.Add("Hold cheese");
+                if (!Bun)
+                {
+                    instructions.Add("Hold bun");
+                }
+                if (!Ketchup)
+                {
+                    instructions.Add("Hold ketchup");
+                }
+                if (!Mustard)
+                {
+                    instructions.Add("Hold mustard");
+                }
+                if (!Pickle)
+                {
+                    instructions.Add("Hold pickle");
+                }
+                if (!cheese)
+                {
+                    instructions.Add("Hold cheese");
+                }
                 return instructions;
             }
         }

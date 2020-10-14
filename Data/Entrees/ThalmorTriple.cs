@@ -35,6 +35,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 ketchup = value;
                 InvokePropertyChanged("Ketchup");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -52,6 +53,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 bun = value;
                 InvokePropertyChanged("Bun");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -69,6 +71,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 mustard = value;
                 InvokePropertyChanged("Mustard");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -87,6 +90,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 pickle = value;
                 InvokePropertyChanged("Pickle");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -104,6 +108,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 cheese = value;
                 InvokePropertyChanged("Cheese");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -121,6 +126,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 tomato = value;
                 InvokePropertyChanged("Tomato");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -138,6 +144,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 lettuce = value;
                 InvokePropertyChanged("Lettuce");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -155,6 +162,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 mayo = value;
                 InvokePropertyChanged("Mayo");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
         /// <summary>
@@ -171,6 +179,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 bacon = value;
                 InvokePropertyChanged("Bacon");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -188,6 +197,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 egg = value;
                 InvokePropertyChanged("Egg");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -199,16 +209,55 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Bun) instructions.Add("Hold bun");
-                if (!Ketchup) instructions.Add("Hold ketchup");
-                if (!Mustard) instructions.Add("Hold mustard");
-                if (!Pickle) instructions.Add("Hold pickle");
-                if (!cheese) instructions.Add("Hold cheese");
-                if (!Tomato) instructions.Add("Hold tomato");
-                if (!Lettuce) instructions.Add("Hold lettuce");
-                if (!Mayo) instructions.Add("Hold mayo");
-                if (!Bacon) instructions.Add("Hold bacon");
-                if (!Egg) instructions.Add("Hold egg");
+                if (!Bun)
+                {
+                    instructions.Add("Hold bun");
+
+                }
+                if (!Ketchup)
+                {
+                    instructions.Add("Hold ketchup");
+
+                }
+                if (!Mustard)
+                {
+                    instructions.Add("Hold mustard");
+
+                }
+                if (!Pickle)
+                {
+                    instructions.Add("Hold pickle");
+                }
+                if (!cheese)
+                {
+                    instructions.Add("Hold cheese");
+
+                }
+                if (!Tomato)
+                {
+                    instructions.Add("Hold tomato");
+
+                }
+                if (!Lettuce)
+                {
+                    instructions.Add("Hold lettuce");
+
+                }
+                if (!Mayo)
+                {
+                    instructions.Add("Hold mayo");
+
+                }
+                if (!Bacon)
+                {
+                    instructions.Add("Hold bacon");
+
+                }
+                if (!Egg)
+                {
+                    instructions.Add("Hold egg");
+
+                }
                 return instructions;
             }
         }

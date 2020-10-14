@@ -24,21 +24,19 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class MadOtarGritsSelection : UserControl
     {
-        /// <summary>
-        /// Creates new Menu Overhad object
-        /// </summary>
-        private MenuOverheadControl menuLook = new MenuOverheadControl();
 
         private MadOtarGrits mg = new MadOtarGrits();
+
+        CurrentTicketControl parent;
 
         /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>
         /// <param name="menuVal">sets the menuVal to menuLook for the overall class</param>
-        public MadOtarGritsSelection(MenuOverheadControl menuVal)
+        public MadOtarGritsSelection(CurrentTicketControl menuVal, MadOtarGrits mg)
         {
             InitializeComponent();
-            menuLook = menuVal;
+            parent = menuVal;
             DataContext = mg;
         }
 
@@ -49,7 +47,7 @@ namespace PointOfSale.Sides
         /// <param name="e">Button Event</param>
         void BackClick(object sender, RoutedEventArgs e)
         {
-            menuLook.menuBorder.Child = menuLook.menuSelect;
+            parent.menuBorder1.Child = new MenuSelection(parent);
         }
 
         /// <summary>

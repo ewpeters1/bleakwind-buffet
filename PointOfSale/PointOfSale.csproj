@@ -7,7 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\74705-The_Elder_Scrolls_V_Skyrim-mountain-tundra-video_games.jpg" />
+    <None Remove="images\download.png" />
+    <None Remove="images\photo-1472457897821-70d3819a0e24.jpg" />
+    <None Remove="images\photo-1555949963-ff9fe0c870eb.jpg" />
+    <None Remove="images\photo-1600638765040-3c169be41e2c.jpg" />
+    <None Remove="images\unnamed.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\74705-The_Elder_Scrolls_V_Skyrim-mountain-tundra-video_games.jpg" />
+    <Resource Include="images\download.png" />
+    <Resource Include="images\photo-1472457897821-70d3819a0e24.jpg" />
+    <Resource Include="images\photo-1555949963-ff9fe0c870eb.jpg" />
+    <Resource Include="images\photo-1600638765040-3c169be41e2c.jpg" />
+    <Resource Include="images\unnamed.jpg" />
   </ItemGroup>
 
 </Project>

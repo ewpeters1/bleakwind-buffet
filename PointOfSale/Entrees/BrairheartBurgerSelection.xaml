@@ -78,32 +78,32 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" IsChecked="{Binding Path = Bun}" Content="Bun" Margin="10,25,0,25" Grid.RowSpan="2">
+        <CheckBox Grid.Row ="1" FontFamily="Tahoma" IsChecked="{Binding Path = Bun}" Content="Bun" Margin="0,0,0,0" Grid.RowSpan="1">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" IsChecked="{Binding Path = Ketchup}" Content="Ketchup"  Margin="10,0,0,0">
+        <CheckBox Grid.Row ="2" FontFamily="Tahoma" IsChecked="{Binding Path = Ketchup}" Content="Ketchup"  Margin="0,0,0,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Mustard" IsChecked="{Binding Path = Mustard}"  Margin="10,0,0,0">
+        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Mustard" IsChecked="{Binding Path = Mustard}"  Margin="0,0,0,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Pickle" IsChecked="{Binding Path = Pickle}" Margin="10,25,0,25" Grid.RowSpan="2">
+        <CheckBox Grid.Row ="4" FontFamily="Tahoma" Content="Pickle" IsChecked="{Binding Path = Pickle}" Margin="0,0,0,0" Grid.RowSpan="2">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <CheckBox Grid.Row ="4" FontFamily="Tahoma" Content="Cheese" IsChecked="{Binding Path = Cheese}" Margin="10,0,10,0">
+        <CheckBox Grid.Row ="5" FontFamily="Tahoma" Content="Cheese" IsChecked="{Binding Path = Cheese}" Margin="0,0,0,0">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
-        <Label Content="Customize Brairheart Burger" FontWeight= "Bold" Grid.ColumnSpan="2" FontFamily="Tahoma" FontSize="12" Margin="0,0,144,0" Grid.Row="1" RenderTransformOrigin="0.5,0.5" >
+        <Label Content="Customize Brairheart Burger" FontWeight= "Bold" Grid.ColumnSpan="12" FontFamily="Tahoma" FontSize="12" Margin="0,0,0,0" Grid.Row="0" >
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -113,7 +113,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="6" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Cancel" Foreground="White" Grid.Row="5" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image Source="{StaticResource MarkerImage}" Grid.Row="4" Grid.RowSpan="3" Grid.Column="2"/>
+        <Button Click="AddDone_Click"  FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="6" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

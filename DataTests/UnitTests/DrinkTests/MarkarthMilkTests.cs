@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -135,6 +136,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 mk.Size = Size.Large;
             });
+        }
+
+        [Fact]
+        public void InheritsInterface()
+        {
+            MarkarthMilk mk = new MarkarthMilk();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(mk);
         }
     }
 }

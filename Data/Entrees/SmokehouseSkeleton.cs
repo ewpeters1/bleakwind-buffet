@@ -35,6 +35,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 sausageLink = value;
                 InvokePropertyChanged("SausageLink");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -52,6 +53,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 egg = value;
                 InvokePropertyChanged("Egg");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -69,6 +71,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 hashBrowns = value;
                 InvokePropertyChanged("HashBrowns");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -86,6 +89,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 pancake = value;
                 InvokePropertyChanged("Pancake");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -97,10 +101,27 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> instructions = new List<string>();
-                if (!SausageLink) instructions.Add("Hold sausage");
-                if (!Egg) instructions.Add("Hold eggs");
-                if (!HashBrowns) instructions.Add("Hold hash browns");
-                if (!Pancake) instructions.Add("Hold pancakes");
+                if (!SausageLink)
+                {
+                    instructions.Add("Hold sausage");
+
+                }
+                if (!Egg)
+                {
+                    instructions.Add("Hold eggs");
+
+                }
+                if (!HashBrowns)
+                {
+
+                    instructions.Add("Hold hash browns");
+
+                }
+                if (!Pancake)
+                {
+                    instructions.Add("Hold pancakes");
+
+                }
                 return instructions;
             }
         }

@@ -100,6 +100,7 @@
         </CheckBox>
         <Label Content="Customize Garden Orc Omlette" FontWeight= "Bold" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" Margin="0,57,212,57" Grid.RowSpan="3"/>
         <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="6" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Cancel" Foreground="White" Grid.Row="5" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+       
+        <Image Source="{StaticResource MarkerImage}" Grid.Row="4" Grid.RowSpan="3" Grid.Column="2"/>
     </Grid>
 </UserControl>

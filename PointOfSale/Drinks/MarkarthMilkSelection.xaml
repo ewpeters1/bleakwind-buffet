@@ -79,13 +79,13 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         </Grid.RowDefinitions>
         <Image Grid.Row ="2" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png" Grid.ColumnSpan="2"  Grid.RowSpan="2"/>
         <ComboBox x:Name="SizeBox" SelectionChanged ="SizeBox_SelectionChanged" Width="120" Height="30" Grid.Row="1" HorizontalAlignment="Left">
-            <ComboBoxItem>
+            <ComboBoxItem x:Name="Small">
                 Small
             </ComboBoxItem>
-            <ComboBoxItem>
+            <ComboBoxItem x:Name="Medium">
                 Medium
             </ComboBoxItem>
-            <ComboBoxItem>
+            <ComboBoxItem x:Name="Large">
                 Large
             </ComboBoxItem>
         </ComboBox>
@@ -94,8 +94,9 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </CheckBox.LayoutTransform>
         </CheckBox>
+        <Image Source="{StaticResource MarkerImage}" Grid.Row="4" Grid.RowSpan="3" Grid.Column="2"/>
         <Label Content="Customize Markarth Milk" FontWeight= "Bold" FontFamily="Tahoma" FontSize="12" Grid.Row="0" />
-        <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Cancel" Foreground="White" Grid.Row="6" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    
         <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="5" Background="Gray" Margin="2,0,0,0" Grid.Column="0" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

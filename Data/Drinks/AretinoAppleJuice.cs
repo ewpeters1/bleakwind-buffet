@@ -13,7 +13,6 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class AretinoAppleJuice : Drink 
     {
-        private Size size = Size.Small;
 
         /// <summary>
         /// The property for Price, and returns a value based on the size
@@ -64,6 +63,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -75,7 +75,10 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> instructions = new List<string>();
-                if (Ice) instructions.Add("Add ice");
+                if (Ice)
+                {
+                    instructions.Add("Add ice");
+                }
                 return instructions;
             }
         }

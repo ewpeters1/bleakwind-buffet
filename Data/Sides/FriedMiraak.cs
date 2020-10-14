@@ -11,8 +11,6 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class FriedMiraak : Side
     {
-        private Size size = Size.Small;
-
         /// <summary>
         /// The property for Price, and returns a value based on the size
         /// </summary>

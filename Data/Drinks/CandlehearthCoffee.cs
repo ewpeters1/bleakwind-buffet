@@ -12,7 +12,6 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class CandlehearthCoffee : Drink 
     {
-        private Size size = Size.Small;
 
 
         /// <summary>
@@ -25,7 +24,10 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (Size == Size.Large) return 1.75;
+                if (Size == Size.Large)
+                {
+                    return 1.75;
+                }
                 if (Size == Size.Medium) return 1.25;
                 if (Size == Size.Small) return 0.75;
                 throw new NotImplementedException();
@@ -64,6 +66,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -82,6 +85,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 roomForcream = value;
                 InvokePropertyChanged("RoomForCream");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -111,8 +115,14 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> instructions = new List<string>();
-                if (Ice) instructions.Add("Add ice");
-                if (RoomForCream) instructions.Add("Add cream");
+                if (Ice)
+                {
+                    instructions.Add("Add ice");
+                }
+                if (RoomForCream) 
+                { 
+                    instructions.Add("Add cream");
+                }
                 return instructions;
             }
         }

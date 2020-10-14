@@ -42,6 +42,8 @@ namespace BleakwindBuffet.Data.Drinks
                 InvokePropertyChanged("Size");
                 InvokePropertyChanged("Price");
                 InvokePropertyChanged("Calories");
+                InvokePropertyChanged("TrueString");
+                InvokePropertyChanged("Flavor");
             }
         }
 
@@ -52,6 +54,18 @@ namespace BleakwindBuffet.Data.Drinks
         /// US Dollars
         /// </value>
         public abstract double Price { get; }
+
+        /// <summary>
+        /// Allows for better display in xaml for true string
+        /// </summary>
+        public virtual string TrueString
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
 
         /// <summary>
         /// Calories for drinks

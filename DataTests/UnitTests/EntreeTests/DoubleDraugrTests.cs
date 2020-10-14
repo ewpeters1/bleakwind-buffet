@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -332,6 +333,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             {
                 dd.Tomato = false;
             });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(dd);
         }
     }
 }

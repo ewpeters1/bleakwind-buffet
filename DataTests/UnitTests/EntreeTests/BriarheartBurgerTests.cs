@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System.Threading.Tasks.Dataflow;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -228,6 +229,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             {
                 bb.Cheese = false;
             });
+        }
+
+        [Fact]
+        public void InheritsInterface()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(bb);
         }
     }
 
