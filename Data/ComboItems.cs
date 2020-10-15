@@ -1,6 +1,6 @@
 ﻿/*
  * Elliot Peters
- * ComboItems.cs
+ * ComboTests.cs
  * Used for making combos of different items
  */
 using BleakwindBuffet.Data.Entrees;
@@ -65,7 +65,7 @@ namespace BleakwindBuffet.Data
             set
             {
                 drink = value;
-                InvokePropertyChanged("Entree");
+                InvokePropertyChanged("Drink");
                 InvokePropertyChanged("Price");
                 InvokePropertyChanged("Calories");
                 InvokePropertyChanged("SpecialInstructions");
@@ -86,7 +86,7 @@ namespace BleakwindBuffet.Data
             set
             {
                 side = value;
-                InvokePropertyChanged("Entree");
+                InvokePropertyChanged("Side");
                 InvokePropertyChanged("Price");
                 InvokePropertyChanged("Calories");
                 InvokePropertyChanged("SpecialInstructions");

@@ -25,8 +25,6 @@ namespace PointOfSale.Sides
     public partial class MadOtarGritsSelection : UserControl
     {
 
-        private MadOtarGrits mg = new MadOtarGrits();
-
         CurrentTicketControl parent;
 
         /// <summary>
@@ -57,7 +55,7 @@ namespace PointOfSale.Sides
         /// <param name="e">event</param>
         void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is MadOtarGrits)
+            if (DataContext is MadOtarGrits mg)
             {
                 foreach (ComboBoxItem s in e.AddedItems)
                 {

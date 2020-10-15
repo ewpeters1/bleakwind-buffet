@@ -28,10 +28,6 @@ namespace PointOfSale.Sides
     {
 
         CurrentTicketControl parent;
-        /// <summary>
-        /// Private backing variable 
-        /// </summary>
-        private DragonbornWaffleFries dw = new DragonbornWaffleFries();
 
         /// <summary>
         /// assigns menuVal to the new object 
@@ -61,7 +57,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is DragonbornWaffleFries)
+            if (DataContext is DragonbornWaffleFries dw)
             {
                 foreach (ComboBoxItem s in e.AddedItems)
                 {

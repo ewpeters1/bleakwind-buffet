@@ -29,7 +29,6 @@ namespace PointOfSale.Drinks
 
         CurrentTicketControl parent;
 
-        private SailorSoda ss = new SailorSoda();
 
         /// <summary>
         /// assigns menuVal to the new object 
@@ -55,7 +54,7 @@ namespace PointOfSale.Drinks
 
         void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is SailorSoda)
+            if (DataContext is SailorSoda ss)
             {
                 foreach (ComboBoxItem s in e.AddedItems)
                 {
@@ -68,7 +67,7 @@ namespace PointOfSale.Drinks
 
         void FlavorBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is SailorSoda)
+            if (DataContext is SailorSoda ss)
             {
                 foreach (ComboBoxItem s in e.AddedItems)
                 {

@@ -25,7 +25,6 @@ namespace PointOfSale.Sides
     public partial class FriedMiraakSelection : UserControl
     {
 
-        private FriedMiraak fm = new FriedMiraak();
 
         CurrentTicketControl parent;
 
@@ -57,7 +56,7 @@ namespace PointOfSale.Sides
         /// <param name="e">event</param>
         void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is FriedMiraak)
+            if (DataContext is FriedMiraak fm)
             {
                 foreach (ComboBoxItem s in e.AddedItems)
                 {

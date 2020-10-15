@@ -73,9 +73,12 @@ namespace PointOfSale
 
         private void DeleteSelectedButton_Click(object sender, RoutedEventArgs e)
         {
-            IOrderItem item = (IOrderItem)itemsListView.SelectedItem;
-            _order.Remove(item);
-            menuBorder1.Child = new MenuSelection(this);
+            if (itemsListView.SelectedItem != null)
+            {
+                IOrderItem item = (IOrderItem)itemsListView.SelectedItem;
+                _order.Remove(item);
+                menuBorder1.Child = new MenuSelection(this);
+            }
         }
 
         private void FinishOrderButton_Click(object sender, RoutedEventArgs e)

@@ -27,7 +27,6 @@ namespace PointOfSale.Drinks
     public partial class CandleHearthCoffeeSelection : UserControl
     {
 
-        private CandlehearthCoffee cc = new CandlehearthCoffee();
 
         CurrentTicketControl parent;
 
@@ -54,7 +53,7 @@ namespace PointOfSale.Drinks
 
         void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is CandlehearthCoffee)
+            if (DataContext is CandlehearthCoffee cc)
             {
                 foreach (ComboBoxItem s in e.AddedItems)
                 {

@@ -31,7 +31,6 @@ namespace PointOfSale.Drinks
 
         CurrentTicketControl parent;
 
-        private MarkarthMilk mm = new MarkarthMilk();
 
         /// <summary>
         /// assigns menuVal to the new object 
@@ -56,7 +55,7 @@ namespace PointOfSale.Drinks
 
         void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is MarkarthMilk)
+            if (DataContext is MarkarthMilk mm)
             {
                 foreach (ComboBoxItem s in e.AddedItems)
                 {

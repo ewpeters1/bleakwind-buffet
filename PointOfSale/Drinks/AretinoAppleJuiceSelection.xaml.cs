@@ -30,10 +30,6 @@ namespace PointOfSale.Drinks
 
         CurrentTicketControl parent;
 
-        /// <summary>
-        /// Creates aretino object from data
-        /// </summary>
-        private AretinoAppleJuice aj = new AretinoAppleJuice();
 
 
         /// <summary>
@@ -64,7 +60,7 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(DataContext is AretinoAppleJuice)
+            if(DataContext is AretinoAppleJuice aj)
             {
                 foreach(ComboBoxItem s in e.AddedItems)
                 {

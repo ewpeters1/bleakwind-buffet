@@ -59,7 +59,7 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is WarriorWater)
+            if (DataContext is WarriorWater ww)
             {
                 foreach (ComboBoxItem s in e.AddedItems)
                 {

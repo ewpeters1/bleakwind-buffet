@@ -25,7 +25,6 @@ namespace PointOfSale.Sides
     public partial class VokunSaladSelection : UserControl
     {
 
-        private VokunSalad vs = new VokunSalad();
 
         CurrentTicketControl parent;
 
@@ -57,7 +56,7 @@ namespace PointOfSale.Sides
         /// <param name="e">event</param>
         void SizeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is VokunSalad)
+            if (DataContext is VokunSalad vs)
             {
                 foreach (ComboBoxItem s in e.AddedItems)
                 {
