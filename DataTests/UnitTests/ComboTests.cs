@@ -14,7 +14,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingEntreeNotfiesPrice()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             BriarheartBurger bb = new BriarheartBurger();
             Assert.PropertyChanged(combo, "Price", () =>
             {
@@ -25,7 +25,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingEntreeNotfiesCalories()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             BriarheartBurger bb = new BriarheartBurger();
             Assert.PropertyChanged(combo, "Calories", () =>
             {
@@ -35,7 +35,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingEntreeNotfiesEntree()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             BriarheartBurger bb = new BriarheartBurger();
             Assert.PropertyChanged(combo, "Entree", () =>
             {
@@ -45,7 +45,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingEntreeNotfiesSpecialInstructions()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             BriarheartBurger bb = new BriarheartBurger();
             Assert.PropertyChanged(combo, "SpecialInstructions", () =>
             {
@@ -56,7 +56,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingDrinkNotfiesPrice()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             AretinoAppleJuice aj = new AretinoAppleJuice();
             Assert.PropertyChanged(combo, "Price", () =>
             {
@@ -66,7 +66,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingDrinkNotfiesDrinkProperty()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             AretinoAppleJuice aj = new AretinoAppleJuice();
             Assert.PropertyChanged(combo, "Drink", () =>
             {
@@ -76,7 +76,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingDrinkNotfiesCalories()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             AretinoAppleJuice aj = new AretinoAppleJuice();
             Assert.PropertyChanged(combo, "Calories", () =>
             {
@@ -86,7 +86,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingDrinkNotfiesSpecialInstructions()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             AretinoAppleJuice aj = new AretinoAppleJuice();
             Assert.PropertyChanged(combo, "SpecialInstructions", () =>
             {
@@ -96,7 +96,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingSideNotifiesPrice()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             MadOtarGrits mg = new MadOtarGrits();
             Assert.PropertyChanged(combo, "Price", () =>
             {
@@ -106,7 +106,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingSideNotifiesCalories()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             MadOtarGrits mg = new MadOtarGrits();
             Assert.PropertyChanged(combo, "Calories", () =>
             {
@@ -116,7 +116,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingSideNotifiesSide()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             MadOtarGrits mg = new MadOtarGrits();
             Assert.PropertyChanged(combo, "Side", () =>
             {
@@ -126,60 +126,12 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ChangingSideNotifiesSpecialInstructions()
         {
-            ComboItems combo = new ComboItems();
+            ComboItems combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
             MadOtarGrits mg = new MadOtarGrits();
             Assert.PropertyChanged(combo, "SpecialInstructions", () =>
             {
                 combo.Side = mg;
             });
-        }
-        [Fact]
-        public void AddingEntreeUpdatesCalories()
-        {
-            ComboItems combo = new ComboItems();
-            BriarheartBurger bb = new BriarheartBurger();
-            combo.Entree = bb;
-            Assert.Equal(bb.Calories, combo.Calories);
-        }
-        [Fact]
-        public void AddingEntreeUpdatesPrice()
-        {
-            ComboItems combo = new ComboItems();
-            BriarheartBurger bb = new BriarheartBurger();
-            combo.Entree = bb;
-            Assert.Equal(bb.Price, combo.Price + 1);
-        }
-        [Fact]
-        public void AddingSideUpdatesCalories()
-        {
-            ComboItems combo = new ComboItems();
-            MadOtarGrits mg = new MadOtarGrits();
-            combo.Side = mg;
-            Assert.Equal(mg.Calories, combo.Calories);
-        }
-        [Fact]
-        public void AddingSideUpdatesPrice()
-        {
-            ComboItems combo = new ComboItems();
-            MadOtarGrits mg = new MadOtarGrits();
-            combo.Side = mg;
-            Assert.Equal(mg.Price, combo.Price+ 1);
-        }
-        [Fact]
-        public void AddingDrinkUpdatesPrice()
-        {
-            ComboItems combo = new ComboItems();
-            AretinoAppleJuice aj = new AretinoAppleJuice();
-            combo.Drink = aj;
-            Assert.Equal(aj.Price, combo.Price + 1);
-        }
-        [Fact]
-        public void AddingDrinkUpdatesCalories()
-        {
-            ComboItems combo = new ComboItems();
-            AretinoAppleJuice aj = new AretinoAppleJuice();
-            combo.Drink = aj;
-            Assert.Equal(aj.Calories, combo.Calories);
         }
     }
 }

@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="PointOfSale.RegisterItems.CashPaymentControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.RegisterItems"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="600">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Text="From Customer" Grid.ColumnSpan="1"/>
+        <TextBlock Text = "Give as Change" Grid.Column="2"  Grid.ColumnSpan="1" />
+        <TextBlock Grid.Column="5" Text="From Customer" Grid.ColumnSpan="3"/>
+        <TextBlock Text = "Give as Change" Grid.Column="10"  Grid.ColumnSpan="3" />
+
+
+        <Border BorderThickness="2" BorderBrush="LightGray" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="9" >
+            <TextBlock Background="White" Margin="0,0,0,0"  Grid.Column="0" Grid.RowSpan="1" Grid.Row="4">
+            <Run Text="Total:" FontFamily="Tahoma"/>
+            <Run Text="{Binding Path=TotalCost, Mode=OneWay,  StringFormat={}{0:C}}"/>
+            </TextBlock>
+        </Border>
+        <TextBlock Text="{Binding Path=AmountDue, StringFormat=c}" Background="Red" Foreground="White"  Margin="0,0,0,0"  Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="9">
+
+        </TextBlock>
+
+        <TextBlock Background="LightGreen" Text="{Binding Path=ChangeDue,  StringFormat=c}" FontFamily="Tahoma" Foreground="White"  Margin="0,0,0,0"  Grid.Column="2" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="9">
+
+        </TextBlock>
+
+        <Button Name="FinalizeSale" Click="FinalizeSale_Click" Margin="5,5,5,5" Foreground="White" Background="Black" Grid.Column="7" Grid.Row="9" Grid.ColumnSpan="1">
+            Finalize Sale
+        </Button>
+        <Button Name="ReturnToOrder" Click="ReturnToOrder_Click" Margin="63,5,5,5" Grid.Column="4" Foreground="White" Background="Black" Grid.Row="8" Grid.ColumnSpan="2">
+            Return To Order
+        </Button>
+
+        <local:CurrencyControl x:Name="HundredsControl" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusHundreds}" ChangeQuantity="{Binding Path=ChangeHundreds}"/>
+        <local:CurrencyControl x:Name ="FiftiesControl" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusFifties}" ChangeQuantity="{Binding Path=ChangeFifties}"/>
+        <local:CurrencyControl x:Name="TwentiesControl" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusTwenties}" ChangeQuantity="{Binding Path=ChangeTwenties}"/>
+        <local:CurrencyControl x:Name="TensControl" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusTens}" ChangeQuantity="{Binding Path=ChangeTens}"/>
+        <local:CurrencyControl x:Name="FivesControl" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusFives}" ChangeQuantity="{Binding Path=ChangeFives}"/>
+        <local:CurrencyControl x:Name="TwosControl" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusTwos}" ChangeQuantity="{Binding Path=ChangeTwos}"/>
+        <local:CurrencyControl x:Name="OnesControl" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusOnes}" ChangeQuantity="{Binding Path=ChangeOnes}"/>
+        <local:CurrencyControl x:Name="OneCoinControl" Grid.Column="5" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusOneCoins}" ChangeQuantity="{Binding Path=ChangeOneCoins}"/>
+        <local:CurrencyControl x:Name="FiftycControl" Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusFiftyCents}" ChangeQuantity="{Binding Path=ChangeFiftyCents}"/>
+        <local:CurrencyControl x:Name="TwentyFiveCentsControl" Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusTwentyFiveCents}" ChangeQuantity="{Binding Path=ChangeTwentyFiveCents}"/>
+        <local:CurrencyControl x:Name="TenCentsControl" Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusTenCents}" ChangeQuantity="{Binding Path=ChangeTenCents}"/>
+        <local:CurrencyControl x:Name="FiveCentsControl" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusFiveCents}" ChangeQuantity="{Binding Path=ChangeFiveCents}"/>
+        <local:CurrencyControl x:Name="PenniesControl" Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="2" Grid.RowSpan="1"
+                               CustomerQuantity="{Binding Path=CusPennies}" ChangeQuantity="{Binding Path=ChangePennies}"/>
+    </Grid>
+</UserControl>

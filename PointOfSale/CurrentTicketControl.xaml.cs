@@ -22,6 +22,7 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using PointOfSale.Drinks;
 using PointOfSale.Entrees;
+using PointOfSale.RegisterItems;
 using PointOfSale.Sides;
 
 namespace PointOfSale
@@ -31,8 +32,15 @@ namespace PointOfSale
     /// </summary>
     public partial class CurrentTicketControl : UserControl
     {
+        /// <summary>
+        /// Backing variable for the order
+        /// </summary>
         private Order _order;
 
+        /// <summary>
+        /// Backing variable for the combo item
+        /// </summary>
+        public ComboItems _combo;
 
         public CurrentTicketControl()
         {
@@ -53,7 +61,7 @@ namespace PointOfSale
             else if (item is ThalmorTriple) menuBorder1.Child = new ThalmorTripleSelection(this, (ThalmorTriple)item);
 
             else if (item is AretinoAppleJuice) menuBorder1.Child = new AretinoAppleJuiceSelection(this, (AretinoAppleJuice)item);
-            else if (item is MarkarthMilk) menuBorder1.Child = new MarkarthMilkSelection(this,(MarkarthMilk)item);
+            else if (item is MarkarthMilk) menuBorder1.Child = new MarkarthMilkSelection(this, (MarkarthMilk)item);
             else if (item is CandlehearthCoffee) menuBorder1.Child = new CandleHearthCoffeeSelection(this, (CandlehearthCoffee)item);
             else if (item is SailorSoda) menuBorder1.Child = new SailorSodaSelection(this, (SailorSoda)item);
             else if (item is WarriorWater) menuBorder1.Child = new WarriorWaterSelection(this, (WarriorWater)item);
@@ -63,6 +71,7 @@ namespace PointOfSale
             else if (item is VokunSalad) menuBorder1.Child = new VokunSaladSelection(this, (VokunSalad)item);
             else if (item is MadOtarGrits) menuBorder1.Child = new MadOtarGritsSelection(this, (MadOtarGrits)item);
 
+            else if (item is ComboItems) menuBorder1.Child = new ComboCustomScreen(this);
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
@@ -83,9 +92,17 @@ namespace PointOfSale
 
         private void FinishOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            _order = new Order();
-            DataContext = _order;
-            menuBorder1.Child = new MenuSelection(this);
+            menuBorder1.Child = new PaymentOptionsScreen(this);
+        }
+
+        private void AddComboItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            menuBorder1.Child = new ComboCustomScreen(this);
+            _combo = new ComboItems(new BriarheartBurger(), new DragonbornWaffleFries(), new SailorSoda());
+            if(DataContext is Order item)
+            {
+                item.Add(_combo);
+            }
         }
     }
 }

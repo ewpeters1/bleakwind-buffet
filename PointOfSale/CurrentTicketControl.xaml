@@ -32,6 +32,10 @@
                  Background="Red" Foreground="White" Margin="339,0,0,0"  Grid.Row="5" Grid.Column="0">
             Delete Selected Item
         </Button>
+        <Button Name ="AddComboItemButton" Click="AddComboItemButton_Click" FontSize="15" FontFamily="Tahoma"
+                 Background="Green" Foreground="White" Margin="191,0,163,0"  Grid.Row="5" Grid.Column="0">
+            Add Combo Item
+        </Button>
         <TextBlock FontWeight= "Bold" Background="White" TextAlignment="Center" Grid.Column="2" FontSize="20" Margin="0,0,0,0" Grid.RowSpan="1">
             <Run Text="Order"/>
             <Run Text="{Binding Path=Number, Mode=OneWay}"/>
@@ -43,7 +47,7 @@
                         <TextBlock Text="{Binding Path=TrueString, Mode=OneWay}"/>
                         <TextBlock>
                             <Run Text="$"/>
-                            <Run Text="{Binding Path=Price, Mode=OneWay}"/>
+                            <Run Text="{Binding Path=Price, Mode=OneWay, StringFormat=c}"/>
                         </TextBlock>
                         <ListView Name="instructions" ItemsSource="{Binding Path=SpecialInstructions}"/>
                     </StackPanel>

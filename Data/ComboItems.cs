@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Net.Http;
 
 namespace BleakwindBuffet.Data
 {
@@ -23,6 +24,13 @@ namespace BleakwindBuffet.Data
         /// Property changed event handler
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+        
+        public ComboItems(Entree e, Side s, Drink d)
+        {
+            this.Entree = e;
+            this.Side = s;
+            this.Drink = d;
+        }
 
         /// <summary>
         /// This is a method to simplify the calling process if Invoking a property
@@ -48,6 +56,7 @@ namespace BleakwindBuffet.Data
                 InvokePropertyChanged("Price");
                 InvokePropertyChanged("Calories");
                 InvokePropertyChanged("SpecialInstructions");
+                Entree.PropertyChanged += ItemChangeListener;
             }
         }
 
@@ -69,6 +78,7 @@ namespace BleakwindBuffet.Data
                 InvokePropertyChanged("Price");
                 InvokePropertyChanged("Calories");
                 InvokePropertyChanged("SpecialInstructions");
+                Drink.PropertyChanged += ItemChangeListener;
             }
         }
 
@@ -90,6 +100,7 @@ namespace BleakwindBuffet.Data
                 InvokePropertyChanged("Price");
                 InvokePropertyChanged("Calories");
                 InvokePropertyChanged("SpecialInstructions");
+                side.PropertyChanged += ItemChangeListener;
             }
         }
 
@@ -150,21 +161,45 @@ namespace BleakwindBuffet.Data
             get
             {
                 List<string> si = new List<string>();
-                if (Entree != null)
-                {
-                    si.Add(Entree.ToString() + Environment.NewLine);
-                    si.Add(Entree.SpecialInstructions.ToString() + Environment.NewLine);
-                }
-                if (Drink != null)
-                {
-                    si.Add(Drink.ToString() + Environment.NewLine);
-                    si.Add(Drink.SpecialInstructions.ToString() + Environment.NewLine);
-                }
-                if (Side != null)
-                {
-                    si.Add(Side.SpecialInstructions.ToString());
-                }
+                si.Add(Entree.ToString());
+                si.AddRange(Entree.SpecialInstructions);
+                si.Add(Side.ToString());
+                si.AddRange(Side.SpecialInstructions);
+                si.Add(Drink.ToString());
+                si.AddRange(Drink.SpecialInstructions);
                 return si;
+            }
+        }
+
+        /// <summary>
+        /// PropertyChange event listener
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ItemChangeListener(object sender, PropertyChangedEventArgs e)
+        {
+            //Size, flavor, special instructions
+            if (e.PropertyName == "Size")
+            {
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
+                InvokePropertyChanged("SpecialInstructions");
+            }
+            else if (e.PropertyName == "Flavor")
+            {
+               InvokePropertyChanged("SpecialInstructions");
+            }
+            else if (e.PropertyName == "SpecialInstructions")
+            {
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
+                InvokePropertyChanged("SpecialInstructions");
+            }
+            else
+            {
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
     }

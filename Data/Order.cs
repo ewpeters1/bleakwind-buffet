@@ -31,6 +31,8 @@ namespace BleakwindBuffet.Data
             nextOrderNumber++;
         }
 
+        public IEnumerable<IOrderItem> Item => order.ToArray();
+
         /// <summary>
         /// Sales tax rate with associated value
         /// </summary>

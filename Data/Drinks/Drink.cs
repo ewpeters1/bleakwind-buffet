@@ -44,6 +44,7 @@ namespace BleakwindBuffet.Data.Drinks
                 InvokePropertyChanged("Calories");
                 InvokePropertyChanged("TrueString");
                 InvokePropertyChanged("Flavor");
+                InvokePropertyChanged("Decaf");
             }
         }
 

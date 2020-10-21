@@ -20,6 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="RoundRegister">
+      <HintPath>..\..\..\Downloads\RoundRegister.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="images\74705-The_Elder_Scrolls_V_Skyrim-mountain-tundra-video_games.jpg" />
     <Resource Include="images\download.png" />
     <Resource Include="images\photo-1472457897821-70d3819a0e24.jpg" />

@@ -1,13 +1,13 @@
-﻿using System;
+﻿/*
+ * Elliot Peters
+ * WarriorWaterSelection.xaml.cs
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-/*
- * Elliot Peters
- * WarriorWaterSelection.xaml.cs
- */
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -29,7 +29,6 @@ namespace PointOfSale.Drinks
 
         CurrentTicketControl parent;
 
-        private WarriorWater ww = new WarriorWater();
 
         /// <summary>
         /// assigns menuVal to the new object 

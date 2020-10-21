@@ -61,6 +61,7 @@ namespace PointOfSale.Drinks
                     if (s.Name == "Small") ss.Size = Size.Small;
                     if (s.Name == "Medium") ss.Size = Size.Medium;
                     if (s.Name == "Large") ss.Size = Size.Large;
+
                 }
             }
         }

@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="PointOfSale.Entrees.ThalmorTripleSelection"
+﻿<UserControl x:Class="PointOfSale.ComboCustomScreen"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="500">
+             d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -63,8 +63,9 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid Background="White">
+    <Grid Background="White" >
         <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -76,60 +77,26 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+
         </Grid.RowDefinitions>
-        <Image Grid.Row ="3" Source="C:\Users\ellio\Desktop\Bleakwind Buffet\download.png" Grid.ColumnSpan="2" Margin="165,64,101,0" Grid.RowSpan="2"/>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Bun" IsChecked="{Binding Path = Bun}" Margin="10,30,0,25" Grid.RowSpan="2">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="2" FontFamily="Tahoma" Content="Mustard" IsChecked="{Binding Path = Mustard}"  Margin="10,0,0,0">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Ketchup" IsChecked="{Binding Path = Ketchup}" Margin="10,0,0,0">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="3" FontFamily="Tahoma" Content="Pickle" IsChecked="{Binding Path = Pickle}"  Margin="10,30,0,25" Grid.RowSpan="2">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="4" FontFamily="Tahoma" Content="Cheese" IsChecked="{Binding Path = Cheese}" Margin="10,0,10,0">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="4" FontFamily="Tahoma" Content="Tomato" IsChecked="{Binding Path = Tomato}" Margin="10,30,10,0">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="5" FontFamily="Tahoma" Content="Lettuce" IsChecked="{Binding Path = Lettuce}" Margin="10,0,10,0">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="5" FontFamily="Tahoma" Content="Mayo" IsChecked="{Binding Path = Mayo}" Margin="10,30,10,0">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="6" FontFamily="Tahoma" Content="Bacon" IsChecked="{Binding Path = Bacon}" Margin="10,0,10,0">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <CheckBox Grid.Row ="6" FontFamily="Tahoma" Content="Egg" IsChecked="{Binding Path = Egg}" Margin="10,30,10,0">
-            <CheckBox.LayoutTransform>
-                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-            </CheckBox.LayoutTransform>
-        </CheckBox>
-        <Label Content="Customize Thalmor Triple" FontWeight= "Bold" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" Margin="0,32,63,18" Grid.RowSpan="2"/>
-        <Image Source="{StaticResource MarkerImage}" Grid.Row="2" Grid.RowSpan="3" Grid.Column="2"/>
-        <Button Click="BackClick"  FontFamily="Tahoma" FontSize="20" Content="Done" Foreground="White" Grid.Row="6" Background="Gray" Margin="2,0,0,0" Grid.Column="1" Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <DockPanel Grid.ColumnSpan="3" Margin="0,0,0,0" Grid.RowSpan="1">
+            <TextBlock DockPanel.Dock="Top" FontWeight= "Bold" FontFamily="Tahoma" TextAlignment="Center" FontSize="20">
+            Combo Creation Screen
+            </TextBlock>
+        </DockPanel>
+        <Button Grid.Row="4" Margin="10,0,10,0" Foreground="White" FontSize="20" Name="EntreeSelect" Click="EntreeSelect_Click" Background="Black">
+            Entree
+        </Button>
+        <Button Grid.Row="4" Margin="10,0,10,0" Grid.Column="1" Foreground="White" Background="Black" FontSize="20" Name="SideSelect" Click="SideSelect_Click" >
+            Side 
+        </Button>
+        <Button Grid.Row="4" Margin="10,0,10,0" Foreground="White" Background="Black" FontSize="20" Grid.Column="2" Name="DrinkSelect" Click="DrinkSelect_Click">
+            Drink
+        </Button>
+        <Button Grid.Row="7" Click="ReturnButton_Click" Margin="10,0,10,0" Foreground="White" Background="Black" FontSize="20" Grid.Column="1" Name="ReturnButton">
+            Finish Combo
+        </Button>
     </Grid>
 </UserControl>

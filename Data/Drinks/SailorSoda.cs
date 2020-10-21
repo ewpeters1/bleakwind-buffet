@@ -59,6 +59,8 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 flavor = value;
                 InvokePropertyChanged("Flavor");
+                InvokePropertyChanged("TrueString");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

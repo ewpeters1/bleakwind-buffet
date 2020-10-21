@@ -30,8 +30,6 @@ namespace PointOfSale.Drinks
 
         CurrentTicketControl parent;
 
-
-
         /// <summary>
         /// assigns menuVal to the new object 
         /// </summary>

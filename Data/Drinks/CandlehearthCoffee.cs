@@ -104,6 +104,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 decaf = value;
                 InvokePropertyChanged("Decaf");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
