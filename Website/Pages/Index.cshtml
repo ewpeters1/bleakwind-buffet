@@ -28,12 +28,12 @@
 
         <h4 class="menu-item">Item Type Selection Search</h4>
         @foreach (String type in BleakwindBuffet.Data.Menu.Items)
-         {
+        {
             <label>
                 <input type="checkbox" name="ItemTypeResults" value="@type" checked="@Model.ItemTypeResults.Contains(type)" />
                 @type
             </label>
-         }
+        }
 
         <h4>Price</h4>
         <div>
@@ -51,10 +51,7 @@
             <input name="CaloriesMax" type="number" min="0" max="990" step="10" placeholder="max" value="@Model.CaloriesMax" />
         </div>
         <div>
-            @if ((Model.ItemTypeResults.Contains("Entree") || Model.ItemTypeResults == null || Model.ItemTypeResults.Count() == 0))
-            {
-                <h2 class="entrees">Entrees</h2>
-            }
+            <h2 class="entrees">Entrees</h2>
             @foreach (BleakwindBuffet.Data.IOrderItem entree in Model.Menus)
             {
                 @if (entree is BleakwindBuffet.Data.Entrees.Entree)
@@ -66,10 +63,7 @@
                     </div>
                 }
             }
-            @if ((Model.ItemTypeResults.Contains("Side") || Model.ItemTypeResults == null || Model.ItemTypeResults.Count() == 0))
-            {
-                <h2 class="sides">Sides</h2>
-            }
+            <h2 class="sides">Sides</h2>
             @foreach (BleakwindBuffet.Data.IOrderItem side in Model.Menus)
             {
                 @if (side is BleakwindBuffet.Data.Sides.Side)
@@ -81,10 +75,7 @@
                     </div>
                 }
             }
-            @if ((Model.ItemTypeResults.Contains("Drink") || Model.ItemTypeResults == null || Model.ItemTypeResults.Count() == 0))
-            {
-                <h2 class="drinks">Drinks</h2>
-            }
+            <h2 class="drinks">Drinks</h2>
             @foreach (BleakwindBuffet.Data.IOrderItem drink in Model.Menus)
             {
                 @if (drink is BleakwindBuffet.Data.Drinks.Drink)
