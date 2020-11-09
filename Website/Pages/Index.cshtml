@@ -51,9 +51,10 @@
             <input name="CaloriesMax" type="number" min="0" max="990" step="10" placeholder="max" value="@Model.CaloriesMax" />
         </div>
         <div>
-            @if ((Model.ItemTypeResults == null || Model.ItemTypeResults.Count() == 0) || Model.ItemTypeResults.Contains("Entree"))
+            @if ((Model.ItemTypeResults.Contains("Entree") || Model.ItemTypeResults == null || Model.ItemTypeResults.Count() == 0))
             {
-                <h2 class="entrees">Entrees</h2>}
+                <h2 class="entrees">Entrees</h2>
+            }
             @foreach (BleakwindBuffet.Data.IOrderItem entree in Model.Menus)
             {
                 @if (entree is BleakwindBuffet.Data.Entrees.Entree)
@@ -62,10 +63,13 @@
                         <h3 class="name">@entree.ToString()</h3>
                         <h3 class="price">@entree.Price</h3>
                         <h3 class="calories">@entree.Calories</h3>
-                    </div>}}
-            @if ((Model.ItemTypeResults == null || Model.ItemTypeResults.Count() == 0) || Model.ItemTypeResults.Contains("Side"))
+                    </div>
+                }
+            }
+            @if ((Model.ItemTypeResults.Contains("Side") || Model.ItemTypeResults == null || Model.ItemTypeResults.Count() == 0))
             {
-                <h2 class="sides">Sides</h2>}
+                <h2 class="sides">Sides</h2>
+            }
             @foreach (BleakwindBuffet.Data.IOrderItem side in Model.Menus)
             {
                 @if (side is BleakwindBuffet.Data.Sides.Side)
@@ -74,10 +78,13 @@
                         <h3 class="name">@side.ToString()</h3>
                         <h3 class="price">@side.Price</h3>
                         <h3 class="calories">@side.Calories</h3>
-                    </div>}}
-            @if ((Model.ItemTypeResults == null || Model.ItemTypeResults.Count() == 0) || Model.ItemTypeResults.Contains("Drink"))
+                    </div>
+                }
+            }
+            @if ((Model.ItemTypeResults.Contains("Drink") || Model.ItemTypeResults == null || Model.ItemTypeResults.Count() == 0))
             {
-                <h2 class="drinks">Drinks</h2>}
+                <h2 class="drinks">Drinks</h2>
+            }
             @foreach (BleakwindBuffet.Data.IOrderItem drink in Model.Menus)
             {
                 @if (drink is BleakwindBuffet.Data.Drinks.Drink)
