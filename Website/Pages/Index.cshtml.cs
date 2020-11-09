@@ -1,7 +1,7 @@
 ﻿/*
  * Elliot Peters
  * Index.cshtml.cs
- * Creating backing variables to pull from the for index html
+ * Creates backing code for the main index HTML page
  */
 using System;
 using System.Collections.Generic;
@@ -15,22 +15,51 @@ using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Policy;
 
 namespace Website.Pages
 {
+    [BindProperties(SupportsGet = true)]
     public class IndexModel : PageModel
     {
+        /// <summary>
+        /// Search terms 
+        /// </summary>A
+        public string SearchTerms { get; set; }
+
+        /// <summary>
+        /// Minimum filter for IMDB
+        /// </summary>
+        public double? PriceMin { get; set; }
+
+        /// <summary>
+        /// Maximum filter for IMDB
+        /// </summary>
+        public double? PriceMax { get; set; }
+
+        /// <summary>
+        /// Minimum filter for calories
+        /// </summary>
+        public int? CaloriesMin { get; set; }
+
+        /// <summary>
+        /// Maximum filter for calories
+        /// </summary>
+        public int? CaloriesMax { get; set; }
+
+        /// <summary>
+        /// Menuu item types from search/ checkboxes
+        /// </summary>
+        public string[] ItemTypeResults{ get; set; } = new string[0];
+
+
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
-        public void OnGet()
-        {
-       
-        }
+        /// <summary>
+        /// Menu that we are editing with search
+        /// </summary>
+        public IEnumerable<IOrderItem> Menus { get; set; } = Menu.All;
 
         /// <summary>
         /// Object for entree menu items
@@ -63,6 +92,22 @@ namespace Website.Pages
             {
                 return Menu.Drinks();
             }
+        }
+
+        public IndexModel(ILogger<IndexModel> logger)
+        {
+            _logger = logger;
+        }
+
+        /// <summary>
+        /// Refreshes page on gets! lol
+        /// </summary>
+        public void OnGet()
+        {
+            Menus = Menu.Search(SearchTerms);
+            Menus = Menu.FilterByCategory(Menus, ItemTypeResults);
+            Menus = Menu.FilterByPrice(Menus, PriceMin, PriceMax);
+            Menus = Menu.FilterByCalories(Menus, CaloriesMin, CaloriesMax);
         }
     }
 }
