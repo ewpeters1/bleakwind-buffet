@@ -144,5 +144,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             MarkarthMilk mk = new MarkarthMilk();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(mk);
         }
+
+        [Theory]
+        [InlineData("Hormone-free organic 2% milk.")]
+        public void ShouldReturnCorrectDescription(string s)
+        {
+            MarkarthMilk mk = new MarkarthMilk();
+            Assert.Equal(s, mk.Description);
+        }
     }
 }

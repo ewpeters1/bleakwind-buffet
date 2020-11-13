@@ -22,6 +22,19 @@ namespace BleakwindBuffet.Data.Entrees
         public override uint Calories => 784;
 
         /// <summary>
+        /// Property for the description
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
+                throw new NotImplementedException();
+            }
+
+        }
+
+        /// <summary>
         /// variable for looking at bool for sirloin
         /// </summary>
         private bool sirloin = true;

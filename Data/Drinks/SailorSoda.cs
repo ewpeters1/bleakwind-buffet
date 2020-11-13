@@ -64,6 +64,17 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// Property for the description
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice";
+                throw new NotImplementedException();
+            }
+        }
 
         /// <summary>
         /// variable for looking at bool for ice

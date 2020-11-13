@@ -48,6 +48,18 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
+        /// Description of item
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.";
+                throw new NotImplementedException();
+            }
+        }
+
+        /// <summary>
         /// returns an empty list since there are no special instructions
         /// </summary>
         public override List<string> SpecialInstructions

@@ -203,5 +203,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(ss);
         }
 
+        [Theory]
+        [InlineData("Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.")]
+        public void ShouldReturnCorrectDescription(string s)
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.Equal(s, ss.Description);
+        }
     }
 }

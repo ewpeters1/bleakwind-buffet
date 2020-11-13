@@ -22,6 +22,19 @@ namespace BleakwindBuffet.Data.Entrees
         public override uint Calories => 982;
 
         /// <summary>
+        /// Property for the description
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Juicy T-Bone, not much else to say.";
+                throw new NotImplementedException();
+            }
+
+        }
+
+        /// <summary>
         /// Returns an empty list for the special instructions for the T-bone
         /// </summary>
         public override List<string> SpecialInstructions

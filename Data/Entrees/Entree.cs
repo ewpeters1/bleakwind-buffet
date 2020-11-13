@@ -49,6 +49,11 @@ namespace BleakwindBuffet.Data.Entrees
         public abstract uint Calories { get; }
 
         /// <summary>
+        /// Description of items
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
         /// Special instructions to prepare the drink 
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }

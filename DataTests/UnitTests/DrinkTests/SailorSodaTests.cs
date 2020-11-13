@@ -226,5 +226,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             SailorSoda sailorSoda = new SailorSoda();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(sailorSoda);
         }
+
+        [Theory]
+        [InlineData("An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice")]
+        public void ShouldReturnCorrectDescription(string s)
+        {
+            SailorSoda sailorSoda = new SailorSoda();
+            Assert.Equal(s, sailorSoda.Description);
+        }
     }
 }

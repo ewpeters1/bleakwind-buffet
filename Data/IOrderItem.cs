@@ -24,6 +24,11 @@ namespace BleakwindBuffet.Data
         /// gets calories of item
         /// </summary>
         uint Calories { get; }
+
+        /// <summary>
+        /// Description of item
+        /// </summary>
+        string Description { get; }
         
         /// <summary>
         /// Gets soecial instruction list of item

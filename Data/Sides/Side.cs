@@ -52,6 +52,12 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+
+        /// <summary>
+        /// Description of items
+        /// </summary>
+        public abstract string Description { get; }
+
         /// <summary>
         /// Price of drink
         /// </summary>

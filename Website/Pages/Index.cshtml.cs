@@ -100,14 +100,73 @@ namespace Website.Pages
         }
 
         /// <summary>
-        /// Refreshes page on gets! lol
+        /// Refreshes the page nd search items
         /// </summary>
         public void OnGet()
         {
-            Menus = Menu.Search(SearchTerms);
-            Menus = Menu.FilterByCategory(Menus, ItemTypeResults);
-            Menus = Menu.FilterByPrice(Menus, PriceMin, PriceMax);
-            Menus = Menu.FilterByCalories(Menus, CaloriesMin, CaloriesMax);
+            Menus = Menu.All;
+            //using linq
+            if (SearchTerms != null)
+            {
+                Menus = Menus.Where(menu => menu.ToString() != null && menu.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase) || menu.Description.Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+            }
+            if (ItemTypeResults != null && ItemTypeResults.Length != 0)
+            {
+                Menus = Menus.Where(menu =>
+                {
+                    foreach (String item in ItemTypeResults)
+                    {
+                        if (item == "Entree" && menu is Entree)
+                        {
+                            return true;
+                        }
+                        if (item == "Side" && menu is Side)
+                        {
+                            return true;
+                        }
+                        if (item == "Drink"  && menu is Drink)
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                });
+            } 
+
+            //filter by calories
+            if(CaloriesMin != null && CaloriesMax != null)
+            {
+                Menus = Menus.Where(menu => menu.Calories >= CaloriesMin && menu.Calories <= CaloriesMax);
+            }
+            else if (CaloriesMin != null)
+            {
+                Menus = Menus.Where(menu => menu.Calories >= CaloriesMin);
+            }
+            else if (CaloriesMax != null)
+            {
+                Menus = Menus.Where(menu => menu.Calories <= CaloriesMax);
+            }
+            else
+            {
+                Menus = Menu.FilterByCalories(Menus, CaloriesMin, CaloriesMax);
+            }
+            //filter by price
+            if (PriceMin != null && PriceMax != null)
+            {
+                Menus = Menus.Where(menu => menu.Price >= PriceMin && menu.Price <= PriceMax);
+            }
+            else if (PriceMin != null)
+            {
+                Menus = Menus.Where(menu => menu.Price >= PriceMin);
+            }
+            else if (PriceMax != null)
+            {
+                Menus = Menus.Where(menu => menu.Price <= PriceMax);
+            }
+            else
+            {
+                Menus = Menu.FilterByPrice(Menus, PriceMin, PriceMax);
+            }
         }
     }
 }

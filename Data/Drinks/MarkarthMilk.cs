@@ -47,6 +47,17 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// Property for the description
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Hormone-free organic 2% milk.";
+                throw new NotImplementedException();
+            }
+        }
 
         /// <summary>
         /// variable for looking at bool for ice

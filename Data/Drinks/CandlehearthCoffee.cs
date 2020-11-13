@@ -51,6 +51,18 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// Property for the description
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Fair trade, fresh ground dark roast coffee.";
+                throw new NotImplementedException();
+            }
+        }
+
 
         /// <summary>
         /// variable for looking at bool for ice

@@ -153,6 +153,12 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        public string Description
+        {
+            get { return ""; }
+        }
+
+
         /// <summary>
         /// This is the SpecialInstructions method for the combo
         /// </summary>
